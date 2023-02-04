@@ -17,7 +17,7 @@ Furthermore, I was interested in seeing how fast I can make this renderer run, w
 rat-holing too much on any specific part while also minimizing dependencies.
 
 ## Some achievements
-I became more comfortable dealing with things like coordinate transformations, parsing and processing OBJ files. 
+I became more comfortable dealing with things like coordinate transformations, parsing and processing OBJ files,
 Compiling and running without the CRT, generating acceleration structures for ray-tracing and multi-threading.  
 
 ## Things to improve

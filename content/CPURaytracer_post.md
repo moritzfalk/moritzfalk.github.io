@@ -14,7 +14,7 @@ I wanted to learn some fundamental principles of graphics rendering without havi
 with the overhead of learning a graphics API at the same time. 
 
 Furthermore, I was interested in seeing how fast I can make this renderer run, without
-rat-holing too much on any specific part while also minimizing dependencies.
+ratholing too much on any specific part while also minimizing dependencies.
 
 ## Some achievements
 I became more comfortable dealing with things like coordinate transformations, parsing and processing OBJ files,
@@ -35,6 +35,8 @@ There are some rendering features I would like to explore if I had infinite time
 like ray-marching.
 
 - **Beyond Blinn-Phong.** Try using BSDFs instead.
+
+- **...**
 <br/>
 ## Some more renders
 <br/>

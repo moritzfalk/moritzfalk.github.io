@@ -3,7 +3,7 @@ date  = 2022-11-01
 +++
 
 {{ resize_image(path="/CPURaytracerThumbnail.png", width=160, height=320, op="fit_height") }}<br clear="all" />
-{{ set_headline(text="CPU Raytracer") }}
+{{ set_headline(text="CPU Ray Tracer") }}
 A short summary of a C/C++ raytracer project capable of rendering <br/>a mildly complex scene in close to real-time.<br/>
 <em>(3D mesh made by <a href="https://www.cgtrader.com/ozne000"><u>Ozne000</u></a>)</em>
 

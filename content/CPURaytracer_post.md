@@ -6,6 +6,7 @@ date  = 2022-11-01
 {{ set_headline(text="CPU Ray Tracer") }}
 A short summary of a C/C++ raytracer project capable of rendering <br/>a mildly complex scene in close to real-time.<br/>
 <em>(3D mesh made by <a href="https://www.cgtrader.com/ozne000"><u>Ozne000</u></a>)</em>
+<em><a href="https://github.com/moritzfalk/MiniRay"><u>Source code on GitHub</u></a></em>
 
 <!-- more -->
 

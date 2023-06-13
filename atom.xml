@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>The Will To Create</title>
+	<subtitle>My stuff</subtitle>
+	<link href="https://moritzfalk.github.io/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://moritzfalk.github.io"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2022-11-01T00:00:00+00:00</updated>
+	<id>https://moritzfalk.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title></title>
+		<published>2022-11-01T00:00:00+00:00</published>
+		<updated>2022-11-01T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://moritzfalk.github.io/cpuraytracer-post/" type="text/html"/>
+		<id>https://moritzfalk.github.io/cpuraytracer-post/</id>
+		<content type="html">&lt;p&gt;
+&lt;a href=&quot;https:&amp;#x2F;&amp;#x2F;moritzfalk.github.io&amp;#x2F;cpuraytracer-post&amp;#x2F;&quot;&gt;&lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;moritzfalk.github.io&amp;#x2F;processed_images&amp;#x2F;4f73aa054acd8ec100.png&quot;  style=&quot;float: left;&quot;&#x2F;&gt;&lt;&#x2F;a&gt;&lt;br clear=&quot;all&quot; &#x2F;&gt;
+
+&lt;header&gt; 
+            &lt;h1&gt;
+                &lt;a href=&quot;https:&amp;#x2F;&amp;#x2F;moritzfalk.github.io&amp;#x2F;cpuraytracer-post&amp;#x2F;&quot;&gt;&lt;u&gt;CPU Ray Tracer&lt;&#x2F;u&gt;&lt;&#x2F;a&gt;
+            &lt;&#x2F;h1&gt;
+ &lt;&#x2F;header&gt;
+A short summary of a C&#x2F;C++ raytracer project capable of rendering &lt;br&#x2F;&gt;a mildly complex scene in close to real-time.&lt;br&#x2F;&gt;
+&lt;em&gt;(3D mesh made by &lt;a href=&quot;https:&#x2F;&#x2F;www.cgtrader.com&#x2F;ozne000&quot;&gt;&lt;u&gt;Ozne000&lt;&#x2F;u&gt;&lt;&#x2F;a&gt;)&lt;&#x2F;em&gt;
+&lt;em&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;moritzfalk&#x2F;MiniRay&quot;&gt;&lt;u&gt;Source code on GitHub&lt;&#x2F;u&gt;&lt;&#x2F;a&gt;&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;h2 id=&quot;why&quot;&gt;Why?&lt;&#x2F;h2&gt;
+&lt;p&gt;I wanted to learn some fundamental principles of graphics rendering without having to deal
+with the overhead of learning a graphics API at the same time. &lt;&#x2F;p&gt;
+&lt;p&gt;Furthermore, I was interested in seeing how fast I can make this renderer run, without
+ratholing too much on any specific part while also minimizing dependencies.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;some-achievements&quot;&gt;Some achievements&lt;&#x2F;h2&gt;
+&lt;p&gt;I became more comfortable dealing with things like coordinate transformations, parsing and processing OBJ files,
+Compiling and running without the CRT, generating acceleration structures for ray-tracing and multi-threading.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;things-to-improve&quot;&gt;Things to improve&lt;&#x2F;h2&gt;
+&lt;p&gt;Aside from the countless things that could be added, profiling and debug visualisation seem like the most important ones.&lt;&#x2F;p&gt;
+&lt;p&gt;I was able to get away with no debug visualisation and only basic frame timing, due to the small scale
+and hard-coded nature of the project.
+But generally, these things are a must to gather real information about the run-time
+behaviour of a program, so that one can improve things in a reality-based manner.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;further-experiments&quot;&gt;Further experiments&lt;&#x2F;h2&gt;
+&lt;p&gt;There are some rendering features I would like to explore if I had infinite time and money.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Soft shadows.&lt;&#x2F;strong&gt; Instead of using a bruteforced sampling approach, experiment with other techniques
+like ray-marching.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Beyond Blinn-Phong.&lt;&#x2F;strong&gt; Try using BSDFs instead.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;...&lt;&#x2F;strong&gt;
+&lt;br&#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;some-more-renders&quot;&gt;Some more renders&lt;&#x2F;h2&gt;
+&lt;br&#x2F;&gt;
+
+&lt;a href=&quot;https:&amp;#x2F;&amp;#x2F;moritzfalk.github.io&amp;#x2F;cpuraytracer-post&amp;#x2F;&quot;&gt;&lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;moritzfalk.github.io&amp;#x2F;processed_images&amp;#x2F;f05adc468c0bd2fa00.png&quot;  style=&quot;float: left;&quot;&#x2F;&gt;&lt;&#x2F;a&gt;
+&lt;br&#x2F;&gt;
+
+&lt;a href=&quot;https:&amp;#x2F;&amp;#x2F;moritzfalk.github.io&amp;#x2F;cpuraytracer-post&amp;#x2F;&quot;&gt;&lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;moritzfalk.github.io&amp;#x2F;processed_images&amp;#x2F;929710a4e3b74cbe00.png&quot;  style=&quot;float: left;&quot;&#x2F;&gt;&lt;&#x2F;a&gt;
+&lt;br clear=&quot;all&quot; &#x2F;&gt;</content>
+	</entry>
+</feed>

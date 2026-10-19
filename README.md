@@ -31,7 +31,7 @@ Project media and links:
 - The custom engine links to the supplied unlisted demo: https://www.youtube.com/watch?v=VtJMUp938f8.
 - SynthForce 2099 links to the team's itch.io submission and includes its screenshot: https://deltaofpie.itch.io/synthforce-2099.
 - MiniRay links to https://github.com/moritzfalk/MiniRay and includes `GitHubShot.PNG` from that repository.
-- TopGRasterizer uses an H.264 copy of the supplied GIF, with controls and no autoplay. Its reference is https://github.com/ssloy/tinyrenderer.
+- The software rasterizer uses an H.264 copy of the supplied GIF, with controls and no autoplay. Its reference is https://github.com/ssloy/tinyrenderer.
 - DDGI uses the supplied February 10, 2023 recording, remuxed for progressive playback without re-encoding. Original audio is preserved.
 
 The original local media files are unchanged. Videos use `preload="none"`; YouTube thumbnails are stored locally and link directly to YouTube, avoiding embedded players that can require visitors to sign in before playback. Both the rasterizer and DDGI descriptions mention the author's sharing on Handmade Network's #showcase-projects Discord channel; no specific Discord message links were supplied.

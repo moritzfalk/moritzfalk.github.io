@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Moritz Falk — Grafik- und Systemprogrammierer in Stuttgart. Renderer, Immediate-Mode-UI, Engine-Entwicklung und Performance-Optimierung. Offen für Stellen und freiberufliche Projekte.">
+  <meta name="theme-color" content="#f5f4ef">
+  <title>Moritz Falk — Grafik- & Systemprogrammierer</title>
+  <link rel="alternate" hreflang="en" href="https://moritzfalk.github.io/">
+  <link rel="alternate" hreflang="de" href="https://moritzfalk.github.io/de.html">
+  <link rel="alternate" hreflang="ja" href="https://moritzfalk.github.io/ja.html">
+  <link rel="alternate" hreflang="x-default" href="https://moritzfalk.github.io/">
+  <style>
+    :root { color-scheme: light; --paper: #f5f4ef; --ink: #222b26; --muted: #5b655e; --line: #cdd2c8; --accent: #285d43; --tint: #e9ede3; --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 30px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+    a:hover { color: var(--accent); }
+    a:focus-visible, summary:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 7px; }
+    ::selection { background: #ccdccb; }
+    .wrap { width: min(1120px, calc(100% - 96px)); margin-inline: auto; }
+    .skip-link { position: absolute; top: -100px; left: 24px; padding: 10px 20px; background: var(--ink); color: white; z-index: 2; }
+    .skip-link:focus { top: 16px; }
+    .site-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-block: 29px; border-bottom: 1px solid var(--line); }
+    .wordmark { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 650; font-size: 17px; letter-spacing: -.4px; }
+    .mark { display: inline-grid; place-items: center; width: 34px; height: 34px; background: var(--accent); color: var(--paper); font: 12px var(--mono); letter-spacing: -.7px; }
+    nav { display: flex; flex-wrap: wrap; gap: 28px; font-size: 14px; }
+    nav a { text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .language-switcher { flex-basis: 100%; justify-content: flex-end; gap: 22px; font-size: 13px; }
+    .language-switcher [aria-current="page"] { color: var(--accent); text-decoration: underline; font-weight: 600; }
+    .language-note { margin: 22px 0 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    html[lang="de"] h1 { font-size: clamp(34px, 4.4vw, 58px); letter-spacing: -1.5px; overflow-wrap: anywhere; }
+    html[lang="ja"] body { font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; line-height: 1.85; }
+    html[lang="ja"] h1 { font-size: clamp(32px, 4vw, 52px); line-height: 1.4; letter-spacing: 0; }
+    html[lang="ja"] h2, html[lang="ja"] h3, html[lang="ja"] .lead { letter-spacing: 0; }
+    .eyebrow { font: 11px/1.6 var(--mono); text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 64px; padding: 91px 0 82px; align-items: end; }
+    h1 { font-size: clamp(43px, 5.2vw, 68px); line-height: 1.06; font-weight: 550; letter-spacing: -3.2px; margin: 22px 0 28px; }
+    .hero-copy { max-width: 620px; margin: 0; font-size: 20px; line-height: 1.55; color: var(--muted); }
+    .hero-copy strong { color: var(--ink); font-weight: 500; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 25px; margin-top: 30px; font-size: 14px; }
+    .hero-links a:first-child { color: var(--accent); }
+    .profile-facts { border-top: 2px solid var(--accent); margin: 0 0 5px; }
+    .profile-facts div { padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .profile-facts dt { font: 10px var(--mono); text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 7px; }
+    .profile-facts dd { margin: 0; font-size: 14px; line-height: 1.6; }
+    .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; border-top: 1px solid var(--ink); padding: 19px 0 0; }
+    .section-heading h2 { margin: 0; font-size: 23px; font-weight: 550; letter-spacing: -.7px; }
+    .section-heading p { margin: 0; }
+    .project { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 54px; padding: 55px 0 57px; border-bottom: 1px solid var(--line); }
+    .project-meta .number { display: block; font: 13px var(--mono); color: var(--accent); margin-bottom: 18px; }
+    .project-meta h3 { margin: 0 0 8px; font-size: 24px; line-height: 1.2; font-weight: 550; letter-spacing: -.7px; }
+    .project-meta p { font-size: 13px; line-height: 1.65; color: var(--muted); margin: 6px 0; }
+    .project-meta .period { font: 11px/1.5 var(--mono); margin: 18px 0; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
+    .tags span { font: 10px/1.5 var(--mono); border: 1px solid var(--line); padding: 4px 7px; }
+    .project-body > p:first-child { margin-top: 0; }
+    .project-body p { max-width: 730px; margin: 0 0 19px; }
+    .project-body .lead { font-size: 22px; line-height: 1.45; letter-spacing: -.4px; color: var(--ink); }
+    .project-body ul { margin: 22px 0 0; padding-left: 19px; }
+    .project-body li { padding-left: 5px; margin: 10px 0; }
+    .project-body li::marker { color: var(--accent); }
+    .project-body li:last-child { margin-bottom: 0; }
+    figure { margin: 30px 0 0; }
+    .project-image { display: block; padding: 14px; background: #242a26; border: 1px solid #303932; }
+    .project-image:hover { background: #303932; }
+    .project-image img { width: 100%; height: auto; display: block; }
+    figcaption { margin-top: 11px; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font: 11px/1.6 var(--mono); }
+    .media { width: 100%; display: block; height: auto; background: #151a17; }
+    .project-links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 22px; font-size: 14px; color: var(--accent); }
+    .youtube-preview { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 1px solid var(--line); background: #151a17; color: white; text-decoration: none; overflow: hidden; }
+    .youtube-preview:hover { color: white; }
+    .youtube-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .youtube-preview::after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.85)); pointer-events: none; }
+    .play-label { position: absolute; inset: auto 24px 22px; display: flex; gap: 14px; align-items: center; text-align: left; font: 15px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif; z-index: 1; }
+    .play-icon { display: grid; place-items: center; width: 40px; height: 40px; flex-shrink: 0; border: 1px solid #ffffffaa; border-radius: 50%; font-size: 14px; }
+    .youtube-preview:hover .play-icon { background: white; color: var(--ink); }
+    .play-label small { display: block; margin-top: 4px; font-size: 11px; color: #e1e5df; }
+    .square-demo { max-width: 520px; }
+    .media-note { margin-top: 16px !important; font-size: 13px; color: var(--muted); }
+    .experiments { padding: 67px 0 72px; }
+    .experiments .section-heading { margin-bottom: 25px; }
+    details { border-bottom: 1px solid var(--line); }
+    summary { list-style: none; display: grid; grid-template-columns: 90px minmax(0, 1fr) 24px; column-gap: 24px; padding: 25px 0; cursor: pointer; }
+    summary::-webkit-details-marker { display: none; }
+    summary .year { font: 11px/1.7 var(--mono); color: var(--muted); padding-top: 4px; }
+    summary h3 { font-size: 19px; font-weight: 550; line-height: 1.4; letter-spacing: -.4px; margin: 0 0 4px; }
+    summary p { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 0; }
+    summary .toggle { font: 22px/1.3 var(--mono); color: var(--accent); text-align: right; }
+    summary .toggle::before { content: "+"; }
+    details[open] .toggle::before { content: "−"; }
+    summary:hover h3 { color: var(--accent); }
+    .experiment-body { max-width: 820px; padding: 0 24px 26px 114px; font-size: 16px; }
+    .experiment-body p { margin: 0 0 14px; }
+    .experiment-body p:last-child { margin-bottom: 0; }
+    .about { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 54px; border-top: 1px solid var(--ink); padding: 30px 0 65px; }
+    .about h2 { font-size: 23px; font-weight: 550; letter-spacing: -.7px; margin: 0; }
+    .about p { margin: 0 0 20px; max-width: 720px; }
+    .language-list { font: 13px/1.8 var(--mono); color: var(--accent); word-spacing: 4px; }
+    .contact { background: var(--tint); padding: 42px; display: flex; align-items: center; justify-content: space-between; gap: 35px; border-top: 2px solid var(--accent); }
+    .contact h2 { font-size: 32px; font-weight: 550; letter-spacing: -1px; line-height: 1.2; margin: 0 0 13px; }
+    .contact p { max-width: 500px; color: var(--muted); margin: 0; font-size: 16px; }
+    .contact a { font-size: 19px; white-space: nowrap; color: var(--accent); }
+    footer { display: flex; justify-content: space-between; gap: 24px; padding: 28px 0 38px; color: var(--muted); font: 11px/1.7 var(--mono); }
+    footer p { margin: 0; }
+    @media (max-width: 900px) {
+      .wrap { width: calc(100% - 56px); }
+      .hero { grid-template-columns: minmax(0, 1fr) 210px; gap: 30px; padding-block: 65px; }
+      h1 { letter-spacing: -2px; }
+      .hero-copy { font-size: 18px; }
+      .project, .about { grid-template-columns: 180px minmax(0, 1fr); gap: 30px; }
+      .contact { padding: 30px; flex-direction: column; align-items: flex-start; gap: 24px; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: calc(100% - 40px); }
+      .site-header { padding-block: 20px; gap: 15px; }
+      .wordmark { font-size: 14px; gap: 8px; }
+      .mark { width: 29px; height: 29px; font-size: 10px; }
+      nav { gap: 15px; font-size: 12px; }
+      nav .desktop-link { display: none; }
+      .hero { display: block; padding: 49px 0; }
+      h1 { font-size: clamp(38px, 10vw, 54px); letter-spacing: -1.9px; margin: 19px 0 24px; }
+      .hero-copy { font-size: 18px; }
+      .profile-facts { margin-top: 38px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 25px; }
+      .profile-facts div:last-child { grid-column: 1 / -1; }
+      .section-heading .eyebrow { display: none; }
+      .project, .about { display: block; padding-block: 33px; }
+      .project-meta { margin-bottom: 27px; }
+      .project-meta .number { margin-bottom: 12px; }
+      .project-meta .period { margin: 10px 0; }
+      .tags { margin-top: 12px; }
+      .project-body .lead { font-size: 21px; }
+      .project-body { font-size: 16px; }
+      .project-image { padding: 7px; }
+      figcaption { font-size: 10px; gap: 12px; }
+      .experiments { padding: 45px 0; }
+      summary { grid-template-columns: minmax(0, 1fr) 20px; gap: 7px 10px; }
+      summary .year { grid-column: 1; }
+      summary .experiment-title { grid-column: 1; }
+      summary .toggle { grid-column: 2; grid-row: 2; }
+      .experiment-body { padding-left: 0; padding-right: 15px; }
+      .about h2 { margin-bottom: 24px; }
+      .contact { padding: 28px 23px; }
+      .contact a { font-size: 18px; }
+      footer { flex-wrap: wrap; gap: 10px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media print {
+      body { background: white; font-size: 11pt; }
+      .wrap { width: 100%; }
+      .skip-link, nav, .hero-links, .toggle, footer { display: none; }
+      .hero { padding: 30px 0; }
+      h1 { font-size: 35pt; }
+      .project { padding-block: 25px; }
+      .project-meta, h2, h3, summary { break-after: avoid; }
+      figure, .contact { break-inside: avoid; }
+      .contact { background: none; padding: 25px 0; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt</a>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="wordmark" href="#" aria-label="Moritz Falk, zurück nach oben"><span class="mark" aria-hidden="true">MF</span>Moritz Falk</a>
+      <nav aria-label="Hauptnavigation">
+        <a href="#projects">Projekte</a>
+        <a class="desktop-link" href="#background">Über mich</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+      <nav class="language-switcher" aria-label="Sprache">
+        <a href="index.html" lang="en" hreflang="en">English</a>
+        <a href="de.html" lang="de" hreflang="de" aria-current="page">Deutsch</a>
+        <a href="ja.html" lang="ja" hreflang="ja">日本語</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="intro-title">
+        <div>
+          <div class="eyebrow">Moritz Falk · Stuttgart, Deutschland</div>
+          <h1 id="intro-title">Grafik- &amp;<br>System&shy;programmierer.</h1>
+          <p class="hero-copy">Ich entwickle Renderer, Werkzeuge und die Systeme dahinter. Meine Schwerpunkte sind <strong>Immediate-Mode-UIs, GPU-Rendering und eigene Engines</strong> – mit einem Fokus auf Performance und einem genauen Blick darauf, was unter der Haube passiert.</p>
+          <div class="hero-links"><a href="mailto:Moritz@falkhf.de">Kontakt aufnehmen <span aria-hidden="true">↗</span></a><a href="assets/moritz-falk-cv.pdf" download>Lebenslauf (Englisch) <span aria-hidden="true">↓</span></a></div>
+        </div>
+        <dl class="profile-facts">
+          <div><dt>Aktuell</dt><dd>Mitgründer, Dihedron Software<br>Entwicklung von Blick Video Editor</dd></div>
+          <div><dt>Programmiersprachen</dt><dd>C / C++ · Odin · HLSL · MSL</dd></div>
+          <div><dt>Gesucht</dt><dd>Stellen in System- und Grafikprogrammierung<br>Freiberufliche Projekte</dd></div>
+        </dl>
+      </section>
+      <section id="projects" aria-labelledby="projects-title">
+        <div class="section-heading"><h2 id="projects-title">Ausgewählte Projekte</h2><p class="eyebrow">Berufliche &amp; eigene Projekte</p></div>
+        <article class="project" id="blick" aria-labelledby="blick-title">
+          <div class="project-meta">
+            <span class="number">01 /</span>
+            <h3 id="blick-title">Blick Video Editor</h3>
+            <p>Dihedron Software GmbH<br>Mitgründer · UI &amp; Rendering</p>
+            <p class="period">2026 — heute</p>
+            <div class="tags"><span>Compute-Shader</span><span>SDF-Rendering</span><span>macOS / Windows</span></div>
+          </div>
+          <div class="project-body">
+            <p class="lead">Ein schlanker Videoeditor mit einem Renderer für eine umfangreiche, interaktive Oberfläche.</p>
+            <p>In einem kleinen Team arbeite ich an den zentralen UI- und Rendering-Systemen von Blick, einem plattformübergreifenden nichtlinearen Videoeditor mit Immediate-Mode-Oberfläche.</p>
+            <ul>
+              <li>Ein auf Compute-Shadern basierender, gekachelter Renderer, der vorzeichenbehaftete Distanzfelder (SDFs) auf der GPU auswertet.</li>
+              <li>Eine kleine Rendering-Sprache, die im Shader interpretiert wird und die Rendering-Logik auf der CPU auf ein Minimum beschränkt.</li>
+              <li>Rendering-Caches, die unveränderte Ergebnisse wiederverwenden. Energieeffizienz ist dabei ein Entwurfsziel.</li>
+            </ul>
+            <figure><a class="project-image" href="assets/blick.png" aria-label="Blick-Screenshot in voller Größe ansehen"><img src="assets/blick.png" width="3006" height="1710" alt="Blick mit Medienbrowser, Videovorschau, Rendereinstellungen und einer mehrspurigen Timeline." decoding="async"></a><figcaption><span>Blick · Bedienoberfläche</span><span>In voller Größe ansehen ↗</span></figcaption></figure>
+            <div class="project-links"><a href="https://blickeditor.com/">Zur Blick-Website ↗</a></div>
+          </div>
+        </article>
+        <article class="project" id="arc" aria-labelledby="arc-title">
+          <div class="project-meta">
+            <span class="number">02 /</span>
+            <h3 id="arc-title">ARC</h3>
+            <p>AnyDesk<br>Renderer- &amp; Plattformentwicklung</p>
+            <p class="period">2024 — 2026</p>
+            <div class="tags"><span>Immediate-Mode-UI</span><span>Rendering-Caches</span><span>Teamleitung</span></div>
+          </div>
+          <div class="project-body">
+            <p class="lead">Eine Immediate-Mode-UI-Bibliothek, entwickelt in einem vierköpfigen Team.</p>
+            <p>Mein Schwerpunkt lag auf Renderer- und Plattformcode. In den letzten vier Monaten meiner Arbeit an dem Projekt habe ich außerdem die Teamleitung übernommen.</p>
+            <p>Ein Beispiel-Renderer erkennt veränderte Bereiche mithilfe eines Hash-Grids. Stencil-Buffer und frühe Tiefen-/Stencil-Tests verhindern dann Pixel-Shader-Aufrufe in unveränderten Bereichen. So kann die Anwendung die UI erneut beschreiben, ohne unnötig Pixel neu zu berechnen.</p>
+            <p>Das Ziel ist eine Immediate-Mode-Oberfläche, die GPU-Rechenleistung und Energie besser nutzt.</p>
+            <figure>
+              <a class="youtube-preview" href="https://www.youtube.com/watch?v=UULQyRKc6sM" target="_blank" rel="noopener noreferrer">
+                <img src="assets/arc-talk.jpg" alt="" width="480" height="360" loading="lazy">
+                <span class="play-label"><span class="play-icon" aria-hidden="true">↗</span><span>ARC-Vortrag auf YouTube ansehen<small>Öffnet einen neuen Tab</small></span></span>
+              </a>
+              <figcaption><span>Taha Torabpour · Better Software Conference 2025</span><a href="https://www.youtube.com/watch?v=UULQyRKc6sM">Auf YouTube ansehen ↗</a></figcaption>
+            </figure>
+            <p class="media-note">Eine Demo mit Fragerunde von meinem ehemaligen ARC-Teamkollegen Taha Torabpour.</p>
+          </div>
+        </article>
+        <article class="project" id="custom-engine" aria-labelledby="engine-title">
+          <div class="project-meta">
+            <span class="number">03 /</span>
+            <h3 id="engine-title">Ein Spiel &amp; seine Engine</h3>
+            <p>Eigenes Projekt<br>Grafik- &amp; Engine-Entwicklung</p>
+            <p class="period">2020 — heute</p>
+            <div class="tags"><span>Voxel-Raytracing</span><span>Globale Beleuchtung</span><span>Entwicklungswerkzeuge</span></div>
+          </div>
+          <div class="project-body">
+            <p class="lead">Eine eigene 3D-Engine, mit der ich dynamische Beleuchtung und einen malerischen Grafikstil erkunde.</p>
+            <p>Hier experimentiere ich mit Rendering-Verfahren und baue die Werkzeuge, um ihr Verhalten und ihre Performance zu verstehen.</p>
+            <ul>
+              <li>Mehrere Iterationen einer voxelbasierten dynamischen globalen Beleuchtung: Mesh-Voxelisierung auf der GPU, ein cachefreundliches Beschleunigungsgitter sowie räumliches und zeitliches Denoising.</li>
+              <li>Stochastisches Alpha mit Interleaved Gradient Noise, um Deferred Decals und volumetrische Billboards in die Deferred-Shading-Pipeline einzubinden.</li>
+              <li>Ein separates Werkzeug, das mit einem MSAA-basierten Voxelisierungsverfahren volumetrische Billboard-Daten in einem eigenen Format erzeugt.</li>
+              <li>Eine mit microui entwickelte Oberfläche für Laufzeitmessungen, die Untersuchung von Entitäten und Debug-Ansichten.</li>
+            </ul>
+            <figure>
+              <a class="youtube-preview" href="https://www.youtube.com/watch?v=VtJMUp938f8" target="_blank" rel="noopener noreferrer">
+                <img src="assets/engine-demo.jpg" alt="" width="480" height="360" loading="lazy">
+                <span class="play-label"><span class="play-icon" aria-hidden="true">↗</span><span>Engine-Demo auf YouTube ansehen<small>Öffnet einen neuen Tab</small></span></span>
+              </a>
+              <figcaption><span>It's voxel o'clock · Engine-Demo</span><a href="https://www.youtube.com/watch?v=VtJMUp938f8">Auf YouTube ansehen ↗</a></figcaption>
+            </figure>
+          </div>
+        </article>
+      </section>
+      <section class="experiments" aria-labelledby="experiments-title">
+        <div class="section-heading"><h2 id="experiments-title">Weitere Projekte &amp; Experimente</h2><p class="eyebrow">Projekt für Details aufklappen</p></div>
+        <details id="retro-racer">
+          <summary><span class="year">2023</span><div class="experiment-title"><h3>SynthForce 2099</h3><p>Ein Pseudo-3D-Arcade-Rennspiel, entstanden mit vier Personen in einem zehntägigen Game Jam.</p></div><span class="toggle" aria-hidden="true"></span></summary>
+          <div class="experiment-body">
+            <p>Unter engem Zeitdruck haben wir verschiedene Disziplinen aufeinander abgestimmt. Der Renderer erzeugt durch Skalieren und Verschieben von Sprites einen räumlichen Eindruck im Stil von Arcade-Spielen wie OutRun.</p><p>Für Platzierung und Feinabstimmung habe ich ein kleines System zur Anpassung von Werten zur Laufzeit implementiert. Es liest den Quellcode des Spiels und lädt ausgewählte Variablenwerte mithilfe einer Hashtabelle und eines Makros im laufenden Spiel neu.</p>
+            <figure><a href="https://deltaofpie.itch.io/synthforce-2099"><img class="media" src="assets/synthforce-2099.png" width="797" height="447" alt="Screenshot von SynthForce 2099 aus dem itch.io-Beitrag des Teams." loading="lazy"></a><figcaption><span>SynthForce 2099 · Game-Jam-Beitrag</span></figcaption></figure>
+            <div class="project-links"><a href="https://deltaofpie.itch.io/synthforce-2099">Auf itch.io spielen ↗</a></div>
+          </div>
+        </details>
+        <details id="ddgi">
+          <summary><span class="year">2022–23</span><div class="experiment-title"><h3>Dynamische diffuse globale Beleuchtung</h3><p>Eine D3D11-Implementierung auf Grundlage einer Forschungsarbeit von NVIDIA.</p></div><span class="toggle" aria-hidden="true"></span></summary>
+          <div class="experiment-body">
+            <p>Mein erstes größeres Projekt mit einer Grafik-API und Shadern. Durch die Implementierung wollte ich probe-basierte Beleuchtung und ihre Kompromisse verstehen, darunter die Platzierung der Probes und den Umgang mit dynamischen Objekten.</p><p>Die Implementierung funktioniert, hat aber keine Beschleunigungsstruktur und verwendet einfache, unoptimierte Shader. Sie war ein guter Ausgangspunkt für meine spätere voxelbasierte Arbeit.</p>
+            <figure><video class="media" controls playsinline preload="none" poster="assets/ddgi-poster.jpg" width="1280" height="720" aria-label="Demo der dynamischen diffusen globalen Beleuchtung, aufgenommen am 10. Februar 2023"><source src="assets/ddgi-demo.mp4" type="video/mp4"><a href="assets/ddgi-demo.mp4">Beleuchtungsdemo herunterladen</a></video><figcaption><span>Entwicklungsaufnahme · 10. Februar 2023</span><a href="assets/ddgi-demo.mp4">Video öffnen ↗</a></figcaption></figure>
+            <p class="media-note">Ich habe diese Arbeit auch im Discord-Kanal #showcase-projects des Handmade Network vorgestellt.</p>
+          </div>
+        </details>
+        <details id="rasterizer">
+          <summary><span class="year">2022</span><div class="experiment-title"><h3>Software-Rasterizer</h3><p>Die Transformations- und Rasterisierungspipeline auf der CPU nachvollziehen.</p></div><span class="toggle" aria-hidden="true"></span></summary>
+          <div class="experiment-body">
+            <p>Ausgehend von <a href="https://github.com/ssloy/tinyrenderer">tinyrenderer</a> habe ich Echtzeit-Rendering, eine bewegliche Kamera und ein einfaches Clipping-Verfahren ergänzt. Das Projekt half mir, die Abfolge der Transformationen zu verstehen, insbesondere den Clip Space und das kanonische Sichtvolumen.</p>
+            <figure class="square-demo"><video class="media" controls playsinline muted loop preload="none" poster="assets/software-rasterizer-poster.jpg" width="800" height="800" aria-label="Software-Rasterizer-Demo"><source src="assets/software-rasterizer.mp4" type="video/mp4"><a href="assets/software-rasterizer.mp4">Software-Rasterizer-Demo herunterladen</a></video><figcaption><span>Software-Rasterizer · Demo</span></figcaption></figure>
+            <p class="media-note">Ich habe diese Arbeit auch im Discord-Kanal #showcase-projects des Handmade Network vorgestellt.</p>
+          </div>
+        </details>
+        <details id="ray-tracer">
+          <summary><span class="year">2022</span><div class="experiment-title"><h3>MiniRay · CPU-Raytracer</h3><p>BVH-Traversierung, Multithreading und ein schnellerer Weg von Modelldateien zu Pixeln.</p></div><span class="toggle" aria-hidden="true"></span></summary>
+          <div class="experiment-body">
+            <p>Für interaktives Rendering habe ich eine Bounding Volume Hierarchy und ein Threading-Modell mit einem Producer und mehreren Consumern implementiert.</p><p>Ein eigener OBJ-Loader speichert bereits eingelesene Modelle in einem eigenen Format zwischen, damit große Dateien nicht erneut geparst werden müssen. Als Übung zum Verständnis und zur Reduzierung von Abhängigkeiten habe ich außerdem die C-Runtime entfernt.</p>
+            <figure><a href="assets/miniray.png" aria-label="MiniRay-Rendering in voller Größe ansehen"><img class="media" src="assets/miniray.png" width="1274" height="718" alt="MiniRay-Rendering einer Statue mit Schwert und Schild sowie einer spiegelnden Kugel darüber." loading="lazy"></a><figcaption><span>MiniRay · CPU-Raytracing nach Whitted</span></figcaption></figure>
+            <div class="project-links"><a href="https://github.com/moritzfalk/MiniRay">Quellcode auf GitHub ↗</a></div>
+          </div>
+        </details>
+      </section>
+      <section class="about" id="background" aria-labelledby="background-title">
+        <h2 id="background-title">Über mich</h2>
+        <div><p>Ich bin Programmierer in Stuttgart und Mitgründer der Dihedron Software GmbH. Meine Erfahrung verbindet Grafik- und Plattformentwicklung in kleinen Teams mit der Entwicklung eigener Engines.</p><p>Mich interessieren Aufgaben an der Schnittstelle von Systemprogrammierung, Rendering und Performance: die Arbeitslast verstehen, passende Darstellungen wählen und die Implementierung darauf abstimmen.</p><div class="language-list" aria-label="Programmiersprachen">C / C++ &nbsp; Odin &nbsp; HLSL &nbsp; MSL</div></div>
+      </section>
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div><h2 id="contact-title">Kontakt aufnehmen.</h2><p>Ich bin offen für Stellen in der Grafik- und Systemprogrammierung sowie für freiberufliche Projekte. Schreib mir gerne eine E-Mail zu einem Projekt oder einer möglichen Zusammenarbeit.</p></div>
+        <a href="mailto:Moritz@falkhf.de">Moritz@falkhf.de <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+    <footer><p>Moritz Falk · Stuttgart, Deutschland</p><a href="assets/moritz-falk-cv.pdf" download>Lebenslauf (PDF, Englisch) ↓</a></footer>
+  </div>
+</body>
+</html>

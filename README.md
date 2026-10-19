@@ -1,6 +1,6 @@
 # Moritz Falk — CV website
 
-A static, responsive portfolio built from CV_English.pdf. The page uses plain HTML and inline CSS, system fonts, and native expandable project sections. No build step, JavaScript, external fonts, or dependencies are required.
+A static, responsive portfolio built from CV_English.pdf. The page uses plain HTML and inline CSS, system fonts, and native expandable project sections. No build step, external fonts, or dependencies are required. A small inline JavaScript handler loads YouTube embeds after a click; direct video links remain available without JavaScript.
 
 ## Preview
 
@@ -24,7 +24,17 @@ If either remote branch has changed, fetch and reconcile those changes before pu
 
 All page content and styles live in `index.html`. Each project has a stable anchor: `blick`, `arc`, `custom-engine`, `retro-racer`, `ddgi`, `rasterizer`, and `ray-tracer`.
 
-The Blick screenshot is from the existing blog assets. The other project sections intentionally use text until actual project media is supplied. Add images or video within the relevant `project-body` or `experiment-body`, using `figure` and `figcaption` for captions. The `.media` class supports responsive images and videos, and `.video` supports a 16:9 iframe. Give every embedded video a descriptive title, use lazy loading, and avoid autoplay. Prefer a click-to-load player for YouTube so the page does not contact YouTube until a visitor chooses to play it.
+Project media and links:
+
+- Blick links to https://blickeditor.com/ and uses the existing blog screenshot. The UI Painter article is not yet published and is not linked.
+- ARC embeds Taha Torabpour's “ARC: A New ImGUI Library” talk from Better Software Conference 2025: https://www.youtube.com/watch?v=UULQyRKc6sM.
+- The custom engine embeds the supplied unlisted demo: https://www.youtube.com/watch?v=VtJMUp938f8.
+- SynthForce 2099 links to the team's itch.io submission and includes its screenshot: https://deltaofpie.itch.io/synthforce-2099.
+- MiniRay links to https://github.com/moritzfalk/MiniRay and includes `GitHubShot.PNG` from that repository.
+- TopGRasterizer uses an H.264 copy of the supplied GIF, with controls and no autoplay. Its reference is https://github.com/ssloy/tinyrenderer.
+- DDGI uses the supplied February 10, 2023 recording, remuxed for progressive playback without re-encoding. Original audio is preserved.
+
+The original local media files are unchanged. Videos use `preload="none"`; YouTube thumbnails are stored locally, and the privacy-enhanced embed is created only after a click. Direct YouTube links provide a fallback if embedding is unavailable. Both the rasterizer and DDGI descriptions mention the author's sharing on Handmade Network's #showcase-projects Discord channel; no specific Discord message links were supplied.
 
 The downloadable CV is an unchanged copy of the supplied PDF, including its postal address. The webpage itself lists only Stuttgart and the supplied email address. Replace `assets/moritz-falk-cv.pdf` if a different public CV is preferred.
 

@@ -13,7 +13,7 @@
     body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 5px; }
     a:hover { color: var(--accent); }
-    a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 7px; }
+    a:focus-visible, summary:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 7px; }
     ::selection { background: #ccdccb; }
     .wrap { width: min(1120px, calc(100% - 96px)); margin-inline: auto; }
     .skip-link { position: absolute; top: -100px; left: 24px; padding: 10px 20px; background: var(--ink); color: white; z-index: 2; }
@@ -57,8 +57,18 @@
     .project-image:hover { background: #303932; }
     .project-image img { width: 100%; height: auto; display: block; }
     figcaption { margin-top: 11px; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font: 11px/1.6 var(--mono); }
-    .media { width: 100%; display: block; height: auto; }
+    .media { width: 100%; display: block; height: auto; background: #151a17; }
     .video { width: 100%; aspect-ratio: 16 / 9; border: 0; display: block; }
+    .project-links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 22px; font-size: 14px; color: var(--accent); }
+    .youtube-preview { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 1px solid var(--line); background: #151a17; color: white; cursor: pointer; overflow: hidden; }
+    .youtube-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .youtube-preview::after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.85)); pointer-events: none; }
+    .play-label { position: absolute; inset: auto 24px 22px; display: flex; gap: 14px; align-items: center; text-align: left; font: 15px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif; z-index: 1; }
+    .play-icon { display: grid; place-items: center; width: 40px; height: 40px; flex-shrink: 0; border: 1px solid #ffffffaa; border-radius: 50%; font-size: 14px; }
+    .youtube-preview:hover .play-icon { background: white; color: var(--ink); }
+    .play-label small { display: block; margin-top: 4px; font-size: 11px; color: #e1e5df; }
+    .square-demo { max-width: 520px; }
+    .media-note { margin-top: 16px !important; font-size: 13px; color: var(--muted); }
     .experiments { padding: 67px 0 72px; }
     .experiments .section-heading { margin-bottom: 25px; }
     details { border-bottom: 1px solid var(--line); }
@@ -184,6 +194,7 @@
               <li>Rendering caches that reuse unchanged output, with energy efficiency as a design goal.</li>
             </ul>
             <figure><a class="project-image" href="assets/blick.png" aria-label="View the full-size Blick screenshot"><img src="assets/blick.png" width="3006" height="1710" alt="Blick video editor showing a media browser, video preview, render settings, and a multitrack editing timeline." decoding="async"></a><figcaption><span>Blick · editing interface</span><span>View full size ↗</span></figcaption></figure>
+            <div class="project-links"><a href="https://blickeditor.com/">Visit Blick's website ↗</a></div>
           </div>
         </article>
         <article class="project" id="arc" aria-labelledby="arc-title">
@@ -199,6 +210,14 @@
             <p>My main responsibilities were renderer and platform code. I also took on a team-leading role during the final four months of my work on the project.</p>
             <p>One example renderer uses a hash grid to identify changed regions. The stencil buffer and early depth/stencil testing then cull pixel shader invocations in unchanged areas. This lets the application describe the UI again while avoiding unnecessary pixel work.</p>
             <p>The practical goal is an immediate-mode interface that makes better use of the GPU and the energy it consumes.</p>
+            <figure>
+              <button class="youtube-preview" type="button" data-youtube="UULQyRKc6sM" data-title="Taha Torabpour — ARC: A New ImGUI Library — BSC 2025" aria-label="Play Taha Torabpour's ARC talk on YouTube">
+                <img src="assets/arc-talk.jpg" alt="" width="480" height="360" loading="lazy">
+                <span class="play-label"><span class="play-icon" aria-hidden="true">▶</span><span>Watch the ARC talk<small>Loads YouTube when played</small></span></span>
+              </button>
+              <figcaption><span>Taha Torabpour · Better Software Conference 2025</span><a href="https://www.youtube.com/watch?v=UULQyRKc6sM">Watch on YouTube ↗</a></figcaption>
+            </figure>
+            <p class="media-note">A demo and Q&amp;A by my former ARC teammate Taha Torabpour.</p>
           </div>
         </article>
         <article class="project" id="custom-engine" aria-labelledby="engine-title">
@@ -218,26 +237,49 @@
               <li>A separate tool that generates volumetric billboard data in a custom format, using an MSAA-based voxelisation method.</li>
               <li>A developer UI built with microui for timing measurements, entity inspection, and debug views.</li>
             </ul>
+            <figure>
+              <button class="youtube-preview" type="button" data-youtube="VtJMUp938f8" data-title="It's voxel o'clock — custom engine demo by Moritz Falk" aria-label="Play Moritz Falk's custom engine demo on YouTube">
+                <img src="assets/engine-demo.jpg" alt="" width="480" height="360" loading="lazy">
+                <span class="play-label"><span class="play-icon" aria-hidden="true">▶</span><span>Watch the engine demo<small>Loads YouTube when played</small></span></span>
+              </button>
+              <figcaption><span>It's voxel o'clock · engine demo</span><a href="https://www.youtube.com/watch?v=VtJMUp938f8">Watch on YouTube ↗</a></figcaption>
+            </figure>
           </div>
         </article>
       </section>
       <section class="experiments" aria-labelledby="experiments-title">
         <div class="section-heading"><h2 id="experiments-title">More projects &amp; experiments</h2><p class="eyebrow">Open a project for details</p></div>
         <details id="retro-racer">
-          <summary><span class="year">2023</span><div class="experiment-title"><h3>Arcade Retro Racer</h3><p>A pseudo-3D racer made by a team of four in a ten-day game jam.</p></div><span class="toggle" aria-hidden="true"></span></summary>
-          <div class="experiment-body"><p>We coordinated across disciplines under a tight deadline. The renderer creates an arcade-style sense of depth by scaling and moving sprites, in the spirit of games like OutRun.</p><p>For placement and tuning, I implemented a small runtime tweak system. It reads the game's source and uses a hash table and a macro to reload selected variable values while the game is running.</p></div>
+          <summary><span class="year">2023</span><div class="experiment-title"><h3>SynthForce 2099</h3><p>A pseudo-3D arcade racer made by a team of four in a ten-day game jam.</p></div><span class="toggle" aria-hidden="true"></span></summary>
+          <div class="experiment-body">
+            <p>We coordinated across disciplines under a tight deadline. The renderer creates an arcade-style sense of depth by scaling and moving sprites, in the spirit of games like OutRun.</p><p>For placement and tuning, I implemented a small runtime tweak system. It reads the game's source and uses a hash table and a macro to reload selected variable values while the game is running.</p>
+            <figure><a href="https://deltaofpie.itch.io/synthforce-2099"><img class="media" src="assets/synthforce-2099.png" width="797" height="447" alt="SynthForce 2099 game screenshot from the team's itch.io submission." loading="lazy"></a><figcaption><span>SynthForce 2099 · game jam submission</span></figcaption></figure>
+            <div class="project-links"><a href="https://deltaofpie.itch.io/synthforce-2099">Play on itch.io ↗</a></div>
+          </div>
         </details>
         <details id="ddgi">
           <summary><span class="year">2022–23</span><div class="experiment-title"><h3>Dynamic diffuse global illumination</h3><p>A D3D11 implementation guided by NVIDIA's research paper.</p></div><span class="toggle" aria-hidden="true"></span></summary>
-          <div class="experiment-body"><p>My first substantial project with a graphics API and shaders. I implemented the technique to understand probe-based lighting and its trade-offs, including probe placement and handling dynamic objects.</p><p>The implementation works, but lacks an acceleration structure and includes naïve shaders. It was a useful starting point for the later voxel-based work.</p></div>
+          <div class="experiment-body">
+            <p>My first substantial project with a graphics API and shaders. I implemented the technique to understand probe-based lighting and its trade-offs, including probe placement and handling dynamic objects.</p><p>The implementation works, but lacks an acceleration structure and includes naïve shaders. It was a useful starting point for the later voxel-based work.</p>
+            <figure><video class="media" controls playsinline preload="none" poster="assets/ddgi-poster.jpg" width="1280" height="720" aria-label="Dynamic diffuse global illumination demo recorded February 10, 2023"><source src="assets/ddgi-demo.mp4" type="video/mp4"><a href="assets/ddgi-demo.mp4">Download the global illumination demo</a></video><figcaption><span>Development recording · 10 February 2023</span><a href="assets/ddgi-demo.mp4">Open video ↗</a></figcaption></figure>
+            <p class="media-note">I also shared this work in Handmade Network's #showcase-projects Discord channel.</p>
+          </div>
         </details>
         <details id="rasterizer">
-          <summary><span class="year">2022</span><div class="experiment-title"><h3>Software rasterizer</h3><p>Working through the transformation and rasterisation pipeline on the CPU.</p></div><span class="toggle" aria-hidden="true"></span></summary>
-          <div class="experiment-body"><p>Starting from tinyrenderer, I added real-time rendering, a dynamic camera, and a simple clipping method. The project helped me understand the transformation hierarchy, particularly clip space and the canonical viewing volume.</p></div>
+          <summary><span class="year">2022</span><div class="experiment-title"><h3>TopGRasterizer · software rasterizer</h3><p>Working through the transformation and rasterisation pipeline on the CPU.</p></div><span class="toggle" aria-hidden="true"></span></summary>
+          <div class="experiment-body">
+            <p>Starting from <a href="https://github.com/ssloy/tinyrenderer">tinyrenderer</a>, I added real-time rendering, a dynamic camera, and a simple clipping method. The project helped me understand the transformation hierarchy, particularly clip space and the canonical viewing volume.</p>
+            <figure class="square-demo"><video class="media" controls playsinline muted loop preload="none" poster="assets/topg-rasterizer-poster.jpg" width="800" height="800" aria-label="TopGRasterizer software rendering demo"><source src="assets/topg-rasterizer.mp4" type="video/mp4"><a href="assets/topg-rasterizer.mp4">Download the software rasterizer demo</a></video><figcaption><span>TopGRasterizer · software rendering demo</span></figcaption></figure>
+            <p class="media-note">I also shared this work in Handmade Network's #showcase-projects Discord channel.</p>
+          </div>
         </details>
         <details id="ray-tracer">
-          <summary><span class="year">2022</span><div class="experiment-title"><h3>CPU ray tracer</h3><p>BVH traversal, multithreading, and a faster path from model files to pixels.</p></div><span class="toggle" aria-hidden="true"></span></summary>
-          <div class="experiment-body"><p>I implemented a bounding volume hierarchy and a single-producer, multiple-consumer threading scheme to work towards interactive rendering.</p><p>A custom OBJ loader caches parsed models in a custom format to avoid the cost of reparsing large files. I also removed the C runtime as an exercise in understanding and reducing dependencies.</p></div>
+          <summary><span class="year">2022</span><div class="experiment-title"><h3>MiniRay · CPU ray tracer</h3><p>BVH traversal, multithreading, and a faster path from model files to pixels.</p></div><span class="toggle" aria-hidden="true"></span></summary>
+          <div class="experiment-body">
+            <p>I implemented a bounding volume hierarchy and a single-producer, multiple-consumer threading scheme to work towards interactive rendering.</p><p>A custom OBJ loader caches parsed models in a custom format to avoid the cost of reparsing large files. I also removed the C runtime as an exercise in understanding and reducing dependencies.</p>
+            <figure><a href="assets/miniray.png" aria-label="View the full-size MiniRay render"><img class="media" src="assets/miniray.png" width="1274" height="718" alt="MiniRay render of a statue holding a sword and shield, with a reflective sphere overhead." loading="lazy"></a><figcaption><span>MiniRay · Whitted-style CPU ray tracing</span></figcaption></figure>
+            <div class="project-links"><a href="https://github.com/moritzfalk/MiniRay">Source code on GitHub ↗</a></div>
+          </div>
         </details>
       </section>
       <section class="about" id="background" aria-labelledby="background-title">
@@ -251,5 +293,20 @@
     </main>
     <footer><p>Moritz Falk · Stuttgart, Germany</p><a href="assets/moritz-falk-cv.pdf" download>Download CV (PDF) ↓</a></footer>
   </div>
+  <script>
+    for (const videoButton of document.querySelectorAll('[data-youtube]')) {
+      videoButton.addEventListener('click', () => {
+        const videoFrame = document.createElement('iframe');
+        videoFrame.className = 'video';
+        videoFrame.src = 'https://www.youtube-nocookie.com/embed/' + videoButton.dataset.youtube + '?autoplay=1&rel=0';
+        videoFrame.title = videoButton.dataset.title;
+        videoFrame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        videoFrame.allowFullscreen = true;
+        videoFrame.referrerPolicy = 'strict-origin-when-cross-origin';
+        videoButton.replaceWith(videoFrame);
+        videoFrame.focus();
+      });
+    }
+  </script>
 </body>
 </html>

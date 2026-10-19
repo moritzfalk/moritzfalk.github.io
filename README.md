@@ -8,7 +8,9 @@ Open `index.html` directly, or run `python3 -m http.server 8080` from this direc
 
 ## GitHub Pages
 
-Live site: https://moritzfalk.github.io/
+Live site: https://moritzfalk.com/
+
+The custom domain is registered with Cloudflare. Keep the `CNAME` file containing `moritzfalk.com` on both branches. Cloudflare DNS points the apex to GitHub Pages using four A and four AAAA records, with `www` as a CNAME to `moritzfalk.github.io` (DNS only). Keep the `_github-pages-challenge-moritzfalk` TXT record to preserve GitHub domain verification. GitHub Pages provides HTTPS and redirects the original GitHub Pages URL and `www` to the custom domain.
 
 This repository keeps the static website on `main` and `gh-pages`. GitHub Pages publishes the root of `gh-pages`; no Zola build or custom workflow is needed. Both branches were synchronised when replacing the original site, preserving the previous content in Git history.
 

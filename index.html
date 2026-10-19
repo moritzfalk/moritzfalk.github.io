@@ -58,9 +58,9 @@
     .project-image img { width: 100%; height: auto; display: block; }
     figcaption { margin-top: 11px; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font: 11px/1.6 var(--mono); }
     .media { width: 100%; display: block; height: auto; background: #151a17; }
-    .video { width: 100%; aspect-ratio: 16 / 9; border: 0; display: block; }
     .project-links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 22px; font-size: 14px; color: var(--accent); }
-    .youtube-preview { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 1px solid var(--line); background: #151a17; color: white; cursor: pointer; overflow: hidden; }
+    .youtube-preview { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 1px solid var(--line); background: #151a17; color: white; text-decoration: none; overflow: hidden; }
+    .youtube-preview:hover { color: white; }
     .youtube-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .youtube-preview::after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.85)); pointer-events: none; }
     .play-label { position: absolute; inset: auto 24px 22px; display: flex; gap: 14px; align-items: center; text-align: left; font: 15px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif; z-index: 1; }
@@ -211,10 +211,10 @@
             <p>One example renderer uses a hash grid to identify changed regions. The stencil buffer and early depth/stencil testing then cull pixel shader invocations in unchanged areas. This lets the application describe the UI again while avoiding unnecessary pixel work.</p>
             <p>The practical goal is an immediate-mode interface that makes better use of the GPU and the energy it consumes.</p>
             <figure>
-              <button class="youtube-preview" type="button" data-youtube="UULQyRKc6sM" data-title="Taha Torabpour — ARC: A New ImGUI Library — BSC 2025" aria-label="Play Taha Torabpour's ARC talk on YouTube">
+              <a class="youtube-preview" href="https://www.youtube.com/watch?v=UULQyRKc6sM" target="_blank" rel="noopener noreferrer">
                 <img src="assets/arc-talk.jpg" alt="" width="480" height="360" loading="lazy">
-                <span class="play-label"><span class="play-icon" aria-hidden="true">▶</span><span>Watch the ARC talk<small>Loads YouTube when played</small></span></span>
-              </button>
+                <span class="play-label"><span class="play-icon" aria-hidden="true">↗</span><span>Watch the ARC talk on YouTube<small>Opens in a new tab</small></span></span>
+              </a>
               <figcaption><span>Taha Torabpour · Better Software Conference 2025</span><a href="https://www.youtube.com/watch?v=UULQyRKc6sM">Watch on YouTube ↗</a></figcaption>
             </figure>
             <p class="media-note">A demo and Q&amp;A by my former ARC teammate Taha Torabpour.</p>
@@ -238,10 +238,10 @@
               <li>A developer UI built with microui for timing measurements, entity inspection, and debug views.</li>
             </ul>
             <figure>
-              <button class="youtube-preview" type="button" data-youtube="VtJMUp938f8" data-title="It's voxel o'clock — custom engine demo by Moritz Falk" aria-label="Play Moritz Falk's custom engine demo on YouTube">
+              <a class="youtube-preview" href="https://www.youtube.com/watch?v=VtJMUp938f8" target="_blank" rel="noopener noreferrer">
                 <img src="assets/engine-demo.jpg" alt="" width="480" height="360" loading="lazy">
-                <span class="play-label"><span class="play-icon" aria-hidden="true">▶</span><span>Watch the engine demo<small>Loads YouTube when played</small></span></span>
-              </button>
+                <span class="play-label"><span class="play-icon" aria-hidden="true">↗</span><span>Watch the engine demo on YouTube<small>Opens in a new tab</small></span></span>
+              </a>
               <figcaption><span>It's voxel o'clock · engine demo</span><a href="https://www.youtube.com/watch?v=VtJMUp938f8">Watch on YouTube ↗</a></figcaption>
             </figure>
           </div>
@@ -293,20 +293,5 @@
     </main>
     <footer><p>Moritz Falk · Stuttgart, Germany</p><a href="assets/moritz-falk-cv.pdf" download>Download CV (PDF) ↓</a></footer>
   </div>
-  <script>
-    for (const videoButton of document.querySelectorAll('[data-youtube]')) {
-      videoButton.addEventListener('click', () => {
-        const videoFrame = document.createElement('iframe');
-        videoFrame.className = 'video';
-        videoFrame.src = 'https://www.youtube-nocookie.com/embed/' + videoButton.dataset.youtube + '?autoplay=1&rel=0';
-        videoFrame.title = videoButton.dataset.title;
-        videoFrame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-        videoFrame.allowFullscreen = true;
-        videoFrame.referrerPolicy = 'strict-origin-when-cross-origin';
-        videoButton.replaceWith(videoFrame);
-        videoFrame.focus();
-      });
-    }
-  </script>
 </body>
 </html>

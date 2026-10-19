@@ -36,6 +36,6 @@ Project media and links:
 
 The original local media files are unchanged. Videos use `preload="none"`; YouTube thumbnails are stored locally and link directly to YouTube, avoiding embedded players that can require visitors to sign in before playback. Both the rasterizer and DDGI descriptions mention the author's sharing on Handmade Network's #showcase-projects Discord channel; no specific Discord message links were supplied.
 
-The downloadable CV is an unchanged copy of the supplied PDF, including its postal address. The webpage itself lists only Stuttgart and the supplied email address. Replace `assets/moritz-falk-cv.pdf` if a different public CV is preferred.
+The downloadable CV is an unchanged copy of the supplied PDF, including its postal address. The webpages list Stuttgart, the supplied email address, and the supplied X profile at https://x.com/falk_moritz. Email and X contact links appear in both the introduction and contact section on all three language versions. Replace `assets/moritz-falk-cv.pdf` if a different public CV is preferred.
 
 Project dates and technical descriptions follow the supplied CV. No project URLs, screenshots, testimonials, performance figures, or qualifications have been invented. The blog post is not linked because it has not yet been published.

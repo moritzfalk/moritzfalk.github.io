@@ -24,6 +24,8 @@ If either remote branch has changed, fetch and reconcile those changes before pu
 
 English is the default at `index.html`. Complete German and Japanese versions live at `de.html` and `ja.html`, with a language selector on every page. Each page has inline styles and shares the same assets; keep layout and content changes consistent across all three pages. The Japanese introduction states that Japanese proficiency is approximately JLPT N4 (self-assessed) and English is preferred for technical discussions. The downloadable CV remains in English. Language selection is explicit, with no automatic redirect. Alternate-language metadata is included for search engines. Each project has a stable anchor: `blick`, `arc`, `custom-engine`, `retro-racer`, `ddgi`, `rasterizer`, and `ray-tracer`.
 
+The supplied portrait is stored at `assets/moritz-falk.jpg` and displayed with a square CSS crop in the introduction. Replace that file to update the photo on all three pages; the original photo is unchanged.
+
 Project media and links:
 
 - Blick links to https://blickeditor.com/ and uses the existing blog screenshot. The UI Painter article is not yet published and is not linked.

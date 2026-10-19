@@ -36,12 +36,14 @@
     html[lang="ja"] h1 { font-size: clamp(32px, 4vw, 52px); line-height: 1.4; letter-spacing: 0; }
     html[lang="ja"] h2, html[lang="ja"] h3, html[lang="ja"] .lead { letter-spacing: 0; }
     .eyebrow { font: 11px/1.6 var(--mono); text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); }
-    .hero { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 64px; padding: 91px 0 82px; align-items: end; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 64px; padding: 91px 0 82px; align-items: center; }
     h1 { font-size: clamp(43px, 5.2vw, 68px); line-height: 1.06; font-weight: 550; letter-spacing: -3.2px; margin: 22px 0 28px; }
     .hero-copy { max-width: 620px; margin: 0; font-size: 20px; line-height: 1.55; color: var(--muted); }
     .hero-copy strong { color: var(--ink); font-weight: 500; }
     .hero-links { display: flex; flex-wrap: wrap; gap: 25px; margin-top: 30px; font-size: 14px; }
     .hero-links a:first-child { color: var(--accent); }
+    .profile-panel { display: grid; gap: 24px; }
+    .portrait { display: block; width: 180px; height: 180px; max-width: 100%; object-fit: cover; object-position: 50% 32%; border: 1px solid var(--line); }
     .profile-facts { border-top: 2px solid var(--accent); margin: 0 0 5px; }
     .profile-facts div { padding: 16px 0; border-bottom: 1px solid var(--line); }
     .profile-facts dt { font: 10px var(--mono); text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 7px; }
@@ -124,7 +126,8 @@
       .hero { display: block; padding: 49px 0; }
       h1 { font-size: clamp(38px, 10vw, 54px); letter-spacing: -1.9px; margin: 19px 0 24px; }
       .hero-copy { font-size: 18px; }
-      .profile-facts { margin-top: 38px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 25px; }
+      .profile-panel { margin-top: 38px; }
+      .profile-facts { margin-top: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 25px; }
       .profile-facts div:last-child { grid-column: 1 / -1; }
       .section-heading .eyebrow { display: none; }
       .project, .about { display: block; padding-block: 33px; }
@@ -187,11 +190,14 @@
           <p class="language-note">日本語はJLPT N4程度（自己評価）です。技術的な議論は英語でのやり取りを希望しています。</p>
           <div class="hero-links"><a href="mailto:Moritz@falkhf.de">お問い合わせ <span aria-hidden="true">↗</span></a><a href="assets/moritz-falk-cv.pdf" download>英文CVをダウンロード <span aria-hidden="true">↓</span></a><a href="https://x.com/falk_moritz" rel="me">X · @falk_moritz <span aria-hidden="true">↗</span></a></div>
         </div>
-        <dl class="profile-facts">
-          <div><dt>現在</dt><dd>Dihedron Software 共同創業者<br>Blick Video Editorを開発中</dd></div>
-          <div><dt>プログラミング言語</dt><dd>C / C++ · Odin · HLSL · MSL</dd></div>
-          <div><dt>希望する仕事</dt><dd>システム・グラフィックス開発職<br>業務委託の開発案件</dd></div>
-        </dl>
+        <div class="profile-panel">
+          <img class="portrait" src="assets/moritz-falk.jpg" width="1024" height="576" alt="Moritz Falk" decoding="async">
+          <dl class="profile-facts">
+            <div><dt>現在</dt><dd>Dihedron Software 共同創業者<br>Blick Video Editorを開発中</dd></div>
+            <div><dt>プログラミング言語</dt><dd>C / C++ · Odin · HLSL · MSL</dd></div>
+            <div><dt>希望する仕事</dt><dd>システム・グラフィックス開発職<br>業務委託の開発案件</dd></div>
+          </dl>
+        </div>
       </section>
       <section id="projects" aria-labelledby="projects-title">
         <div class="section-heading"><h2 id="projects-title">主なプロジェクト</h2><p class="eyebrow">業務・個人開発</p></div>

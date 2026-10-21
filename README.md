@@ -43,3 +43,5 @@ The original local media files are unchanged. Videos use `preload="none"`; YouTu
 The downloadable CV is an unchanged copy of the supplied PDF, including its postal address. The webpages list Stuttgart, the supplied email address, and the supplied X profile at https://x.com/falk_moritz. Email and X contact links appear in both the introduction and contact section on all three language versions. Replace `assets/moritz-falk-cv.pdf` if a different public CV is preferred.
 
 Project dates and technical descriptions follow the supplied CV. No project URLs, screenshots, testimonials, performance figures, or qualifications have been invented. The Blick project links to the published UI Painter article.
+
+The Currently section includes a linked Dihedron Software card in all three languages. Its official small-format logo comes from https://dihedron.net/static/dihedron/favicon.png, stored locally as `assets/dihedron-logo.png`; the card links to https://dihedron.net.

@@ -49,6 +49,13 @@
     .profile-facts div { padding: 16px 0; border-bottom: 1px solid var(--line); }
     .profile-facts dt { font: 10px var(--mono); text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 7px; }
     .profile-facts dd { margin: 0; font-size: 14px; line-height: 1.6; }
+    .company-card { display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+    .company-card:hover { border-color: var(--accent); color: var(--ink); }
+    .company-card img { width: 42px; height: 42px; flex-shrink: 0; padding: 4px; background: #151a17; }
+    .company-card strong { display: block; font-size: 13px; font-weight: 500; }
+    .company-card small { display: block; font-size: 12px; color: var(--muted); }
+    .company-arrow { margin-left: auto; color: var(--accent); }
+    .current-work { display: block; margin-top: 10px; }
     .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; border-top: 1px solid var(--ink); padding: 19px 0 0; }
     .section-heading h2 { margin: 0; font-size: 23px; font-weight: 550; letter-spacing: -.7px; }
     .section-heading p { margin: 0; }
@@ -142,7 +149,7 @@
       .hero-copy { font-size: 18px; }
       .profile-panel { margin-top: 38px; }
       .profile-facts { margin-top: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 25px; }
-      .profile-facts div:last-child { grid-column: 1 / -1; }
+      .profile-facts > div { grid-column: 1 / -1; }
       .section-heading .eyebrow { display: none; }
       .project, .about { display: block; padding-block: 33px; }
       .project-meta { margin-bottom: 27px; }
@@ -211,7 +218,7 @@
         <div class="profile-panel">
           <img class="portrait" src="assets/moritz-falk.jpg" width="1024" height="576" alt="Moritz Falk" decoding="async">
           <dl class="profile-facts">
-            <div><dt>現在</dt><dd>Dihedron Software 共同創業者<br>Blick Video Editorを開発中</dd></div>
+            <div class="current-role"><dt>現在</dt><dd><a class="company-card" href="https://dihedron.net"><img src="assets/dihedron-logo.png" width="128" height="128" alt=""><span><strong>Dihedron Software</strong><small>共同創業者</small></span><span class="company-arrow" aria-hidden="true">↗</span></a><span class="current-work">Blick Video Editorを開発中</span></dd></div>
             <div><dt>プログラミング言語</dt><dd>C / C++ · Odin · HLSL · MSL</dd></div>
             <div><dt>希望する仕事</dt><dd>システム・グラフィックス開発職<br>業務委託の開発案件</dd></div>
           </dl>

@@ -75,6 +75,8 @@
     .project-links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 22px; font-size: 14px; color: var(--accent); }
     .youtube-preview { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 1px solid var(--line); background: #151a17; color: white; text-decoration: none; overflow: hidden; }
     .youtube-preview:hover { color: white; }
+    .arc-preview { aspect-ratio: 12 / 5; }
+    .youtube-preview.arc-preview img { position: absolute; width: 116.364%; height: auto; max-width: none; left: -3.182%; top: -5.018%; }
     .youtube-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .youtube-preview::after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.85)); pointer-events: none; }
     .play-label { position: absolute; inset: auto 24px 22px; display: flex; gap: 14px; align-items: center; text-align: left; font: 15px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif; z-index: 1; }
@@ -219,7 +221,7 @@
               <li>変化のない描画結果を再利用するキャッシュを実装。エネルギー効率を設計目標の一つにしています。</li>
             </ul>
             <figure><a class="project-image" href="assets/blick.png" aria-label="Blickのスクリーンショットを元のサイズで表示"><img src="assets/blick.png" width="3006" height="1710" alt="メディアブラウザー、動画プレビュー、レンダリング設定、マルチトラックのタイムラインを表示したBlickの編集画面。" decoding="async"></a><figcaption><span>Blick · 編集画面</span><span>元のサイズで表示 ↗</span></figcaption></figure>
-            <div class="project-links"><a href="https://blickeditor.com/">Blickのウェブサイト ↗</a></div>
+            <div class="project-links"><a href="https://blickeditor.com/">Blickのウェブサイト ↗</a><a href="https://blickeditor.com/blog/caching-an-immediate-mode-ui">UIレンダリングとキャッシュについての記事（英語）↗</a></div>
           </div>
         </article>
         <article class="project" id="arc" aria-labelledby="arc-title">
@@ -236,13 +238,13 @@
             <p>レンダラーの一例では、ハッシュグリッドで変更された領域を特定します。ステンシルバッファと早期深度・ステンシルテストによって、変更のない領域ではピクセルシェーダーの実行を省きます。アプリケーションがUIを毎回記述し直しても、不要なピクセル処理を避けられます。</p>
             <p>GPUの処理能力と消費エネルギーをより有効に使うイミディエイトモードUIを目指しました。</p>
             <figure>
-              <a class="youtube-preview" href="https://www.youtube.com/watch?v=UULQyRKc6sM" target="_blank" rel="noopener noreferrer">
-                <img src="assets/arc-talk.jpg" alt="" width="480" height="360" loading="lazy">
+              <a class="youtube-preview arc-preview" href="https://www.youtube.com/watch?v=UULQyRKc6sM" target="_blank" rel="noopener noreferrer">
+                <img src="assets/arc-talk.jpg" alt="ARCのデモにあるテキストとタイポグラフィの例。" width="1280" height="720" loading="lazy">
                 <span class="play-label"><span class="play-icon" aria-hidden="true">↗</span><span>ARCの講演をYouTubeで見る<small>新しいタブで開きます</small></span></span>
               </a>
-              <figcaption><span>Taha Torabpour · Better Software Conference 2025</span><a href="https://www.youtube.com/watch?v=UULQyRKc6sM">YouTubeで見る ↗</a></figcaption>
+              <figcaption><span>ARC · Better Software Conference 2025</span><a href="https://www.youtube.com/watch?v=UULQyRKc6sM">YouTubeで見る ↗</a></figcaption>
             </figure>
-            <p class="media-note">ARCで一緒に開発していたTaha Torabpourによるデモと質疑応答です。</p>
+            <p class="media-note">ARCで一緒に開発していた元チームメンバーによるデモと質疑応答です。</p>
           </div>
         </article>
         <article class="project" id="custom-engine" aria-labelledby="engine-title">

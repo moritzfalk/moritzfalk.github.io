@@ -72,10 +72,21 @@
     .project-image img { width: 100%; height: auto; display: block; }
     figcaption { margin-top: 11px; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font: 11px/1.6 var(--mono); }
     .media { width: 100%; display: block; height: auto; background: #151a17; }
+    .blick-logo { display: inline-block; text-decoration: none; }
+    .blick-logo img { display: block; width: 220px; max-width: 100%; height: auto; }
+    .blick-logo span { display: block; margin-top: 12px; color: var(--muted); font: 12px/1.5 var(--mono); }
+    .blick-logo:hover span { color: var(--accent); }
+    .article-card { display: grid; grid-template-columns: 155px minmax(0, 1fr); gap: 28px; align-items: center; margin-top: 28px; padding: 24px; border: 1px solid var(--line); text-decoration: none; color: var(--ink); }
+    .article-card:hover { color: var(--ink); border-color: var(--accent); }
+    .article-card > img { width: 100%; height: auto; display: block; }
+    .article-card h4 { font-size: 22px; line-height: 1.35; letter-spacing: -.4px; margin: 10px 0 12px; font-weight: 500; }
+    .article-card p { font-size: 14px; line-height: 1.65; margin: 0 0 16px; color: var(--muted); }
+    .article-link { font-size: 13px; color: var(--accent); }
     .project-links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 22px; font-size: 14px; color: var(--accent); }
     .youtube-preview { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 1px solid var(--line); background: #151a17; color: white; text-decoration: none; overflow: hidden; }
     .youtube-preview:hover { color: white; }
     .arc-preview { aspect-ratio: 12 / 5; }
+    .youtube-preview.engine-preview img { position: absolute; width: 145.455%; height: auto; max-width: none; left: -18.182%; top: -18.182%; }
     .youtube-preview.arc-preview img { position: absolute; width: 116.364%; height: auto; max-width: none; left: -3.182%; top: -5.018%; }
     .youtube-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .youtube-preview::after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.85)); pointer-events: none; }
@@ -141,6 +152,10 @@
       .project-body .lead { font-size: 21px; }
       .project-body { font-size: 16px; }
       .project-image { padding: 7px; }
+      .article-card { grid-template-columns: 85px minmax(0, 1fr); gap: 18px; padding: 16px; align-items: start; }
+      .article-card h4 { font-size: 18px; }
+      .article-card p { display: none; }
+      .article-card .eyebrow { font-size: 9px; }
       figcaption { font-size: 10px; gap: 12px; }
       .experiments { padding: 45px 0; }
       summary { grid-template-columns: minmax(0, 1fr) 20px; gap: 7px 10px; }
@@ -206,7 +221,7 @@
         <article class="project" id="blick" aria-labelledby="blick-title">
           <div class="project-meta">
             <span class="number">01 /</span>
-            <h3 id="blick-title">Blick Video Editor</h3>
+            <h3 id="blick-title"><a class="blick-logo" href="https://blickeditor.com/" aria-label="Zur Blick-Website"><img src="assets/blick-logo.svg" width="230" height="40" alt="Blick"><span>Video Editor ↗</span></a></h3>
             <p>Dihedron Software GmbH<br>Mitgründer · UI &amp; Rendering</p>
             <p class="period">2026 — heute</p>
             <div class="tags"><span>Compute-Shader</span><span>SDF-Rendering</span><span>macOS / Windows</span></div>
@@ -220,7 +235,10 @@
               <li>Rendering-Caches, die unveränderte Ergebnisse wiederverwenden. Energieeffizienz ist dabei ein Entwurfsziel.</li>
             </ul>
             <figure><a class="project-image" href="assets/blick.png" aria-label="Blick-Screenshot in voller Größe ansehen"><img src="assets/blick.png" width="3006" height="1710" alt="Blick mit Medienbrowser, Videovorschau, Rendereinstellungen und einer mehrspurigen Timeline." decoding="async"></a><figcaption><span>Blick · Bedienoberfläche</span><span>In voller Größe ansehen ↗</span></figcaption></figure>
-            <div class="project-links"><a href="https://blickeditor.com/">Zur Blick-Website ↗</a><a href="https://blickeditor.com/blog/caching-an-immediate-mode-ui">Mein Artikel über UI-Rendering und Caching (Englisch) ↗</a></div>
+            <a class="article-card" href="https://blickeditor.com/blog/caching-an-immediate-mode-ui">
+              <img src="assets/ui-painter-article-cover.png" width="1470" height="1936" alt="" loading="lazy">
+              <div><span class="eyebrow">Aus dem Blick-Blog · Englisch</span><h4>Don’t throw it all away.<br>Caching an immediate-mode UI</h4><p>Wie der UI Painter gerenderte Pixel in einer Immediate-Mode-UI wiederverwendet und was das für den Stromverbrauch bedeutet.</p><span class="article-link">Artikel lesen ↗</span></div>
+            </a>
           </div>
         </article>
         <article class="project" id="arc" aria-labelledby="arc-title">
@@ -238,7 +256,7 @@
             <p>Das Ziel ist eine Immediate-Mode-Oberfläche, die GPU-Rechenleistung und Energie besser nutzt.</p>
             <figure>
               <a class="youtube-preview arc-preview" href="https://www.youtube.com/watch?v=UULQyRKc6sM" target="_blank" rel="noopener noreferrer">
-                <img src="assets/arc-typography-demo.jpg" alt="Text- und Typografiebeispiele aus der ARC-Demo." width="1280" height="720" loading="lazy">
+                <img src="assets/arc-typography-1440.jpg" alt="Text- und Typografiebeispiele aus der ARC-Demo." width="2560" height="1440" loading="lazy">
                 <span class="play-label"><span class="play-icon" aria-hidden="true">↗</span><span>ARC-Vortrag auf YouTube ansehen<small>Öffnet einen neuen Tab</small></span></span>
               </a>
               <figcaption><span>ARC · Better Software Conference 2025</span><a href="https://www.youtube.com/watch?v=UULQyRKc6sM">Auf YouTube ansehen ↗</a></figcaption>
@@ -264,8 +282,8 @@
               <li>Eine mit microui entwickelte Oberfläche für Laufzeitmessungen, die Untersuchung von Entitäten und Debug-Ansichten.</li>
             </ul>
             <figure>
-              <a class="youtube-preview" href="https://www.youtube.com/watch?v=VtJMUp938f8" target="_blank" rel="noopener noreferrer">
-                <img src="assets/engine-demo.jpg" alt="" width="480" height="360" loading="lazy">
+              <a class="youtube-preview engine-preview" href="https://www.youtube.com/watch?v=VtJMUp938f8" target="_blank" rel="noopener noreferrer">
+                <img src="assets/engine-demo-1080.jpg" alt="Die eigene Engine mit einer beleuchteten 3D-Szene und Entwicklerwerkzeugen." width="1920" height="1080" loading="lazy">
                 <span class="play-label"><span class="play-icon" aria-hidden="true">↗</span><span>Engine-Demo auf YouTube ansehen<small>Öffnet einen neuen Tab</small></span></span>
               </a>
               <figcaption><span>It's voxel o'clock · Engine-Demo</span><a href="https://www.youtube.com/watch?v=VtJMUp938f8">Auf YouTube ansehen ↗</a></figcaption>

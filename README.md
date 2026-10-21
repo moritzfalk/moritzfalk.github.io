@@ -30,9 +30,9 @@ The supplied portrait is stored at `assets/moritz-falk.jpg` and displayed with a
 
 Project media and links:
 
-- Blick’s official SVG logo links to https://blickeditor.com/. The section keeps the editor screenshot and includes an article card with the NASA Apollo cover drawing. The UI Painter article is linked at https://blickeditor.com/blog/caching-an-immediate-mode-ui.
+- Blick’s official SVG logo links to https://blickeditor.com/. The section includes an article card with the NASA Apollo cover drawing. The UI Painter article is linked at https://blickeditor.com/blog/caching-an-immediate-mode-ui.
 - ARC links to the “ARC: A New ImGUI Library” talk from Better Software Conference 2025: https://www.youtube.com/watch?v=UULQyRKc6sM.
-- The custom engine uses a 1080p source frame at 1:10, framed around the application, and links to the supplied unlisted demo: https://www.youtube.com/watch?v=VtJMUp938f8.
+- The custom engine uses the full 1080p source frame at 1:10, including the presenter inset, and links to the supplied unlisted demo: https://www.youtube.com/watch?v=VtJMUp938f8.
 - SynthForce 2099 links to the team's itch.io submission and includes its screenshot: https://deltaofpie.itch.io/synthforce-2099.
 - MiniRay links to https://github.com/moritzfalk/MiniRay and includes `GitHubShot.PNG` from that repository.
 - The software rasterizer uses an H.264 copy of the supplied GIF, with controls and no autoplay. Its reference is https://github.com/ssloy/tinyrenderer.

@@ -48,7 +48,6 @@
     .company-card { display: inline-flex; align-items: center; gap: 6px; padding: 3px 6px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; }
     .company-card:hover { border-color: var(--accent); color: var(--ink); }
     .company-card img { width: 22px; height: 22px; flex-shrink: 0; padding: 2px; background: #151a17; }
-    .company-arrow { color: var(--accent); }
     .section-heading { border-top: 1px solid var(--line); padding-top: 22px; }
     .section-heading h2 { margin: 0; font-size: 23px; font-weight: 550; letter-spacing: -.7px; }
     .project { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 40px; padding: 32px 0 40px; border-bottom: 1px solid var(--line); }
@@ -83,9 +82,7 @@
     .youtube-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .youtube-preview::after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.85)); pointer-events: none; }
     .engine-preview::after { inset: 0; background: linear-gradient(25deg, rgba(0,0,0,.8), transparent 60%); }
-    .play-label { position: absolute; inset: auto 24px 22px; display: flex; gap: 14px; align-items: center; text-align: left; font: 15px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif; z-index: 1; }
-    .play-icon { display: grid; place-items: center; width: 40px; height: 40px; flex-shrink: 0; border: 1px solid #ffffffaa; border-radius: 50%; font-size: 14px; }
-    .youtube-preview:hover .play-icon { background: white; color: var(--ink); }
+    .play-label { position: absolute; inset: auto 24px 22px; display: block; text-align: left; font: 15px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif; z-index: 1; }
     .square-demo { max-width: 520px; }
     .media-note { margin-top: 16px !important; font-size: 13px; color: var(--muted); }
     .experiments { padding: 32px 0 40px; }
@@ -131,8 +128,7 @@
       .article-card h4 { font-size: 18px; }
       .article-card p { display: none; }
       .article-card .eyebrow { font-size: 12px; }
-      .play-label { inset: auto 14px 14px; font-size: 14px; gap: 10px; }
-      .play-icon { width: 32px; height: 32px; }
+      .play-label { inset: auto 14px 14px; font-size: 14px; }
       summary { grid-template-columns: 88px minmax(0, 1fr) 16px; gap: 14px; }
       .experiment-preview { width: 88px; height: 66px; }
       summary h3 { font-size: 17px; }
@@ -174,7 +170,7 @@
         <div class="section-heading"><h2 id="projects-title">Projects</h2></div>
         <article class="project" id="blick" aria-labelledby="blick-title">
           <div class="project-meta">
-            <h3 id="blick-title"><a class="blick-logo" href="https://blickeditor.com/" aria-label="Visit Blick’s website"><img src="assets/blick-logo.svg" width="230" height="40" alt="Blick"><span>Video Editor ↗</span></a></h3>
+            <h3 id="blick-title"><a class="blick-logo" href="https://blickeditor.com/" aria-label="Visit Blick’s website"><img src="assets/blick-logo.svg" width="230" height="40" alt="Blick"><span>Video Editor</span></a></h3>
             <p>Dihedron Software GmbH<br>Co-founder · UI &amp; rendering</p>
             <p class="period">2026 — present</p>
           </div>
@@ -182,7 +178,7 @@
             <p class="lead">A cross-platform video editor with an immediate-mode interface.</p>
             <a class="article-card" href="https://blickeditor.com/blog/caching-an-immediate-mode-ui">
               <img src="assets/ui-painter-article-cover.png" width="1470" height="1936" alt="" loading="lazy">
-              <div><span class="eyebrow">From the Blick blog</span><h4>Don’t throw it all away.<br>Caching an immediate-mode UI</h4><p>How the UI Painter reuses rendered pixels behind an immediate-mode UI, and what that means for power use.</p><span class="article-link">Read article ↗</span></div>
+              <div><span class="eyebrow">From the Blick blog</span><h4>Don’t throw it all away.<br>Caching an immediate-mode UI</h4><p>How the UI Painter reuses rendered pixels behind an immediate-mode UI, and what that means for power use.</p><span class="article-link">Read article</span></div>
             </a>
             <ul>
               <li>A compute-driven, tiled renderer that evaluates signed distance fields on the GPU.</li>
@@ -203,7 +199,7 @@
             <figure>
               <a class="youtube-preview arc-preview" href="https://www.youtube.com/watch?v=UULQyRKc6sM" target="_blank" rel="noopener noreferrer">
                 <img src="assets/arc-typography-1440.jpg" alt="Text and typography examples from the ARC demo." width="2560" height="1440" loading="lazy">
-                <span class="play-label"><span class="play-icon" aria-hidden="true">↗</span><span>Watch the ARC talk on YouTube</span></span>
+                <span class="play-label"><span>Watch the ARC talk on YouTube</span></span>
               </a>
               <figcaption><span>ARC · Better Software Conference 2025</span></figcaption>
             </figure>
@@ -225,7 +221,7 @@
             <figure>
               <a class="youtube-preview engine-preview" href="https://www.youtube.com/watch?v=VtJMUp938f8" target="_blank" rel="noopener noreferrer">
                 <img src="assets/engine-demo-1080.jpg" alt="The custom engine showing a lit 3D scene and developer controls." width="1920" height="1080" loading="lazy">
-                <span class="play-label"><span class="play-icon" aria-hidden="true">↗</span><span>Watch the engine demo on YouTube</span></span>
+                <span class="play-label"><span>Watch the engine demo on YouTube</span></span>
               </a>
               <figcaption><span>It's voxel o'clock · engine demo</span></figcaption>
             </figure>
@@ -245,14 +241,14 @@
           <div class="experiment-body">
             <p>We coordinated across disciplines under a tight deadline. The renderer creates an arcade-style sense of depth by scaling and moving sprites, in the spirit of games like OutRun.</p><p>For placement and tuning, I implemented a small runtime tweak system. It reads the game's source and uses a hash table and a macro to reload selected variable values while the game is running.</p>
             <figure><a href="https://deltaofpie.itch.io/synthforce-2099"><img class="media" src="assets/synthforce-2099.png" width="797" height="447" alt="SynthForce 2099 game screenshot from the team's itch.io submission." loading="lazy"></a><figcaption><span>SynthForce 2099 · game jam submission</span></figcaption></figure>
-            <div class="project-links"><a href="https://deltaofpie.itch.io/synthforce-2099">Play on itch.io ↗</a></div>
+            <div class="project-links"><a href="https://deltaofpie.itch.io/synthforce-2099">Play on itch.io</a></div>
           </div>
         </details>
         <details id="ddgi">
           <summary><img class="experiment-preview" src="assets/ddgi-poster.jpg" width="144" height="96" alt="" loading="lazy"><div class="experiment-title"><h3>Dynamic diffuse global illumination</h3><p>A D3D11 implementation guided by NVIDIA's research paper.</p><span class="year">2022–23</span></div><span class="toggle" aria-hidden="true"></span></summary>
           <div class="experiment-body">
             <p>My first substantial project with a graphics API and shaders. I implemented the technique to understand probe-based lighting and its trade-offs, including probe placement and handling dynamic objects.</p><p>The implementation works, but lacks an acceleration structure and includes naïve shaders. It was a useful starting point for the later voxel-based work.</p>
-            <figure><video class="media" controls playsinline preload="none" poster="assets/ddgi-poster.jpg" width="1280" height="720" aria-label="Dynamic diffuse global illumination demo recorded February 10, 2023"><source src="assets/ddgi-demo.mp4" type="video/mp4"><a href="assets/ddgi-demo.mp4">Download the global illumination demo</a></video><figcaption><span>Development recording · 10 February 2023</span><a href="assets/ddgi-demo.mp4">Open video ↗</a></figcaption></figure>
+            <figure><video class="media" controls playsinline preload="none" poster="assets/ddgi-poster.jpg" width="1280" height="720" aria-label="Dynamic diffuse global illumination demo recorded February 10, 2023"><source src="assets/ddgi-demo.mp4" type="video/mp4"><a href="assets/ddgi-demo.mp4">Download the global illumination demo</a></video><figcaption><span>Development recording · 10 February 2023</span><a href="assets/ddgi-demo.mp4">Open video</a></figcaption></figure>
           </div>
         </details>
         <details id="rasterizer">
@@ -267,7 +263,7 @@
           <div class="experiment-body">
             <p>I implemented a bounding volume hierarchy and a single-producer, multiple-consumer threading scheme to work towards interactive rendering.</p><p>A custom OBJ loader caches parsed models in a custom format to avoid the cost of reparsing large files. I also removed the C runtime as an exercise in understanding and reducing dependencies.</p>
             <figure><a href="assets/miniray.png" aria-label="View the full-size MiniRay render"><img class="media" src="assets/miniray.png" width="1274" height="718" alt="MiniRay render of a statue holding a sword and shield, with a reflective sphere overhead." loading="lazy"></a><figcaption><span>MiniRay · Whitted-style CPU ray tracing</span></figcaption></figure>
-            <div class="project-links"><a href="https://github.com/moritzfalk/MiniRay">Source code on GitHub ↗</a></div>
+            <div class="project-links"><a href="https://github.com/moritzfalk/MiniRay">Source code on GitHub</a></div>
           </div>
         </details>
       </section>
@@ -275,13 +271,13 @@
         <h2 id="contact-title">About &amp; contact</h2>
         <div>
           <p class="profile-copy">I develop renderers, immediate-mode UIs, and custom engines. Based in Stuttgart, Germany.</p>
-          <p class="company-affiliation"><span>Co-founder at</span> <a class="company-card" href="https://dihedron.net"><img src="assets/dihedron-logo.png" width="128" height="128" alt=""><span>Dihedron Software</span><span class="company-arrow" aria-hidden="true">↗</span></a></p>
+          <p class="company-affiliation"><span>Co-founder at</span> <a class="company-card" href="https://dihedron.net"><img src="assets/dihedron-logo.png" width="128" height="128" alt=""><span>Dihedron Software</span></a></p>
           <dl class="profile-facts">
             <div><dt>Programming languages</dt><dd>C / C++ · Odin · HLSL · MSL</dd></div>
             <div><dt>Spoken languages</dt><dd>English · German · Japanese&nbsp;(basic)</dd></div>
           </dl>
           <p class="availability">Open to graphics and systems programming roles and contract work.</p>
-          <div class="contact-links"><a href="mailto:Moritz@falkhf.de">Moritz@falkhf.de <span aria-hidden="true">↗</span></a><a href="https://x.com/falk_moritz" rel="me">X · @falk_moritz <span aria-hidden="true">↗</span></a><a href="assets/moritz-falk-cv.pdf" download>CV (PDF) <span aria-hidden="true">↓</span></a></div>
+          <div class="contact-links"><a href="mailto:Moritz@falkhf.de">Moritz@falkhf.de</a><a href="https://x.com/falk_moritz" rel="me">X · @falk_moritz</a><a href="assets/moritz-falk-cv.pdf" download>CV (PDF)</a></div>
         </div>
       </section>
     </main>

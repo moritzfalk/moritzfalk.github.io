@@ -48,7 +48,6 @@
     .company-card { display: inline-flex; align-items: center; gap: 6px; padding: 3px 6px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; }
     .company-card:hover { border-color: var(--accent); color: var(--ink); }
     .company-card img { width: 22px; height: 22px; flex-shrink: 0; padding: 2px; background: #151a17; }
-    .company-arrow { color: var(--accent); }
     .section-heading { border-top: 1px solid var(--line); padding-top: 22px; }
     .section-heading h2 { margin: 0; font-size: 23px; font-weight: 550; letter-spacing: -.7px; }
     .project { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 40px; padding: 32px 0 40px; border-bottom: 1px solid var(--line); }
@@ -83,9 +82,7 @@
     .youtube-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .youtube-preview::after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.85)); pointer-events: none; }
     .engine-preview::after { inset: 0; background: linear-gradient(25deg, rgba(0,0,0,.8), transparent 60%); }
-    .play-label { position: absolute; inset: auto 24px 22px; display: flex; gap: 14px; align-items: center; text-align: left; font: 15px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif; z-index: 1; }
-    .play-icon { display: grid; place-items: center; width: 40px; height: 40px; flex-shrink: 0; border: 1px solid #ffffffaa; border-radius: 50%; font-size: 14px; }
-    .youtube-preview:hover .play-icon { background: white; color: var(--ink); }
+    .play-label { position: absolute; inset: auto 24px 22px; display: block; text-align: left; font: 15px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif; z-index: 1; }
     .square-demo { max-width: 520px; }
     .media-note { margin-top: 16px !important; font-size: 13px; color: var(--muted); }
     .experiments { padding: 32px 0 40px; }
@@ -131,8 +128,7 @@
       .article-card h4 { font-size: 18px; }
       .article-card p { display: none; }
       .article-card .eyebrow { font-size: 12px; }
-      .play-label { inset: auto 14px 14px; font-size: 14px; gap: 10px; }
-      .play-icon { width: 32px; height: 32px; }
+      .play-label { inset: auto 14px 14px; font-size: 14px; }
       summary { grid-template-columns: 88px minmax(0, 1fr) 16px; gap: 14px; }
       .experiment-preview { width: 88px; height: 66px; }
       summary h3 { font-size: 17px; }
@@ -174,7 +170,7 @@
         <div class="section-heading"><h2 id="projects-title">プロジェクト</h2></div>
         <article class="project" id="blick" aria-labelledby="blick-title">
           <div class="project-meta">
-            <h3 id="blick-title"><a class="blick-logo" href="https://blickeditor.com/" aria-label="Blickのウェブサイト"><img src="assets/blick-logo.svg" width="230" height="40" alt="Blick"><span>Video Editor ↗</span></a></h3>
+            <h3 id="blick-title"><a class="blick-logo" href="https://blickeditor.com/" aria-label="Blickのウェブサイト"><img src="assets/blick-logo.svg" width="230" height="40" alt="Blick"><span>Video Editor</span></a></h3>
             <p>Dihedron Software GmbH<br>共同創業者 · UI・レンダリング</p>
             <p class="period">2026年 — 現在</p>
           </div>
@@ -182,7 +178,7 @@
             <p class="lead">イミディエイトモードUIを採用したクロスプラットフォームの動画編集ソフトです。</p>
             <a class="article-card" href="https://blickeditor.com/blog/caching-an-immediate-mode-ui">
               <img src="assets/ui-painter-article-cover.png" width="1470" height="1936" alt="" loading="lazy">
-              <div><span class="eyebrow">Blickブログより · 英語</span><h4>Don’t throw it all away.<br>Caching an immediate-mode UI</h4><p>イミディエイトモードUIで描画済みのピクセルを再利用する仕組みと、消費電力への効果について。</p><span class="article-link">記事を読む ↗</span></div>
+              <div><span class="eyebrow">Blickブログより · 英語</span><h4>Don’t throw it all away.<br>Caching an immediate-mode UI</h4><p>イミディエイトモードUIで描画済みのピクセルを再利用する仕組みと、消費電力への効果について。</p><span class="article-link">記事を読む</span></div>
             </a>
             <ul>
               <li>コンピュートシェーダーを使うタイルベースのレンダラー。符号付き距離場（SDF）をGPU上で評価します。</li>
@@ -203,7 +199,7 @@
             <figure>
               <a class="youtube-preview arc-preview" href="https://www.youtube.com/watch?v=UULQyRKc6sM" target="_blank" rel="noopener noreferrer">
                 <img src="assets/arc-typography-1440.jpg" alt="ARCのデモにあるテキストとタイポグラフィの例。" width="2560" height="1440" loading="lazy">
-                <span class="play-label"><span class="play-icon" aria-hidden="true">↗</span><span>ARCの講演をYouTubeで見る</span></span>
+                <span class="play-label"><span>ARCの講演をYouTubeで見る</span></span>
               </a>
               <figcaption><span>ARC · Better Software Conference 2025</span></figcaption>
             </figure>
@@ -225,7 +221,7 @@
             <figure>
               <a class="youtube-preview engine-preview" href="https://www.youtube.com/watch?v=VtJMUp938f8" target="_blank" rel="noopener noreferrer">
                 <img src="assets/engine-demo-1080.jpg" alt="自作エンジンで描画した3Dシーンと開発用UI。" width="1920" height="1080" loading="lazy">
-                <span class="play-label"><span class="play-icon" aria-hidden="true">↗</span><span>エンジンのデモをYouTubeで見る</span></span>
+                <span class="play-label"><span>エンジンのデモをYouTubeで見る</span></span>
               </a>
               <figcaption><span>It's voxel o'clock · エンジンのデモ</span></figcaption>
             </figure>
@@ -245,14 +241,14 @@
           <div class="experiment-body">
             <p>短い制作期間の中で、担当分野の異なるメンバーと協力しました。スプライトを拡大・縮小したり動かしたりすることで、OutRunのような奥行きを表現しています。</p><p>配置やパラメーターを調整しやすいよう、ゲームを動かしたまま値を変更できる仕組みも作りました。ソースコードを読み取り、ハッシュテーブルとマクロを使って、指定した変数の値を再読み込みします。</p>
             <figure><a href="https://deltaofpie.itch.io/synthforce-2099"><img class="media" src="assets/synthforce-2099.png" width="797" height="447" alt="チームがitch.ioに公開したSynthForce 2099のゲーム画面。" loading="lazy"></a><figcaption><span>SynthForce 2099 · ゲームジャム作品</span></figcaption></figure>
-            <div class="project-links"><a href="https://deltaofpie.itch.io/synthforce-2099">itch.ioで遊ぶ ↗</a></div>
+            <div class="project-links"><a href="https://deltaofpie.itch.io/synthforce-2099">itch.ioで遊ぶ</a></div>
           </div>
         </details>
         <details id="ddgi">
           <summary><img class="experiment-preview" src="assets/ddgi-poster.jpg" width="144" height="96" alt="" loading="lazy"><div class="experiment-title"><h3>Dynamic Diffuse Global Illumination（DDGI）</h3><p>NVIDIAの論文を参考にしたD3D11実装です。</p><span class="year">2022–23</span></div><span class="toggle" aria-hidden="true"></span></summary>
           <div class="experiment-body">
             <p>グラフィックスAPIとシェーダーを使った最初の本格的なプロジェクトです。プローブを使ったライティングの仕組みを学ぶために実装しました。プローブの配置や動くオブジェクトへの対応など、それぞれのトレードオフを検討しました。</p><p>動作はしますが、高速化構造（acceleration structure）はなく、シェーダーもまだ最適化していません。この経験が、その後のボクセルベースの開発につながりました。</p>
-            <figure><video class="media" controls playsinline preload="none" poster="assets/ddgi-poster.jpg" width="1280" height="720" aria-label="Dynamic Diffuse Global Illumination（DDGI）のデモ、2023年2月10日録画"><source src="assets/ddgi-demo.mp4" type="video/mp4"><a href="assets/ddgi-demo.mp4">グローバルイルミネーションのデモをダウンロード</a></video><figcaption><span>開発中のデモ · 2023年2月10日</span><a href="assets/ddgi-demo.mp4">動画を開く ↗</a></figcaption></figure>
+            <figure><video class="media" controls playsinline preload="none" poster="assets/ddgi-poster.jpg" width="1280" height="720" aria-label="Dynamic Diffuse Global Illumination（DDGI）のデモ、2023年2月10日録画"><source src="assets/ddgi-demo.mp4" type="video/mp4"><a href="assets/ddgi-demo.mp4">グローバルイルミネーションのデモをダウンロード</a></video><figcaption><span>開発中のデモ · 2023年2月10日</span><a href="assets/ddgi-demo.mp4">動画を開く</a></figcaption></figure>
           </div>
         </details>
         <details id="rasterizer">
@@ -267,7 +263,7 @@
           <div class="experiment-body">
             <p>インタラクティブな描画を目指し、BVH（Bounding Volume Hierarchy）とマルチスレッド処理を実装しました。スレッド間の処理には、単一プロデューサー・複数コンシューマー方式を使っています。</p><p>自作のOBJローダーでは、読み込んだモデルを独自形式でキャッシュしています。大きなファイルを毎回パースし直す必要がなくなります。また、依存関係を理解して減らすために、Cランタイムへの依存も取り除きました。</p>
             <figure><a href="assets/miniray.png" aria-label="MiniRayの描画結果を元のサイズで表示"><img class="media" src="assets/miniray.png" width="1274" height="718" alt="剣と盾を持つ像と、その上に浮かぶ反射する球体を描画したMiniRayの画像。" loading="lazy"></a><figcaption><span>MiniRay · Whitted型CPUレイトレーシング</span></figcaption></figure>
-            <div class="project-links"><a href="https://github.com/moritzfalk/MiniRay">GitHubのソースコード ↗</a></div>
+            <div class="project-links"><a href="https://github.com/moritzfalk/MiniRay">GitHubのソースコード</a></div>
           </div>
         </details>
       </section>
@@ -275,14 +271,14 @@
         <h2 id="contact-title">自己紹介・お問い合わせ</h2>
         <div>
           <p class="profile-copy">ドイツのシュトゥットガルトで、レンダラー、イミディエイトモードUI、自作エンジンを開発しています。</p>
-          <p class="company-affiliation"><a class="company-card" href="https://dihedron.net"><img src="assets/dihedron-logo.png" width="128" height="128" alt=""><span>Dihedron Software</span><span class="company-arrow" aria-hidden="true">↗</span></a> <span>共同創業者</span></p>
+          <p class="company-affiliation"><a class="company-card" href="https://dihedron.net"><img src="assets/dihedron-logo.png" width="128" height="128" alt=""><span>Dihedron Software</span></a> <span>共同創業者</span></p>
           <dl class="profile-facts">
             <div><dt>プログラミング言語</dt><dd>C / C++ · Odin · HLSL · MSL</dd></div>
             <div><dt>話せる言語</dt><dd>英語・ドイツ語・日本語（初級）</dd></div>
           </dl>
           <p class="language-note">日本語はJLPT N4程度（自己評価）です。技術的なやり取りは、英語でお願いできると助かります。</p>
           <p class="availability">グラフィックス・システム開発の仕事や業務委託の案件を探しています。</p>
-          <div class="contact-links"><a href="mailto:Moritz@falkhf.de">Moritz@falkhf.de <span aria-hidden="true">↗</span></a><a href="https://x.com/falk_moritz" rel="me">X · @falk_moritz <span aria-hidden="true">↗</span></a><a href="assets/moritz-falk-cv.pdf" download>英文CV <span aria-hidden="true">↓</span></a></div>
+          <div class="contact-links"><a href="mailto:Moritz@falkhf.de">Moritz@falkhf.de</a><a href="https://x.com/falk_moritz" rel="me">X · @falk_moritz</a><a href="assets/moritz-falk-cv.pdf" download>英文CV</a></div>
         </div>
       </section>
     </main>

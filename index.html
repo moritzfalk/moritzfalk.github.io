@@ -89,7 +89,7 @@
     .experiments .section-heading { border-top: 0; padding-top: 0; margin-bottom: 12px; }
     details { border-bottom: 1px solid var(--line); }
     summary { list-style: none; display: grid; grid-template-columns: 144px minmax(0, 1fr) 24px; gap: 24px; align-items: center; padding: 22px 0; cursor: pointer; }
-    .experiment-preview { width: 144px; height: 96px; object-fit: contain; background: #151a17; }
+    .experiment-preview { display: block; width: 144px; height: 96px; object-fit: contain; background: #151a17; }
     summary::-webkit-details-marker { display: none; }
     summary .year { display: block; color: var(--muted); font-size: 13px; margin-top: 5px; }
     summary h3 { font-size: 19px; font-weight: 550; line-height: 1.4; letter-spacing: -.4px; margin: 0 0 4px; }
@@ -153,7 +153,7 @@
   <div class="wrap">
     <header class="site-header">
       <div class="identity">
-        <img class="portrait" src="assets/moritz-falk.jpg" width="1024" height="576" alt="Moritz Falk" decoding="async">
+        <img class="portrait" src="assets/previews/moritz-falk-72.jpg" srcset="assets/previews/moritz-falk-144.jpg 2x, assets/previews/moritz-falk-216.jpg 3x" width="72" height="72" alt="Moritz Falk" decoding="async">
         <div><h1><a class="wordmark" href="#" aria-label="Moritz Falk, back to top">Moritz Falk</a></h1><p class="role">Graphics &amp; systems programmer</p></div>
       </div>
       <nav aria-label="Main navigation">
@@ -177,7 +177,7 @@
           <div class="project-body">
             <p class="lead">A cross-platform video editor with an immediate-mode interface.</p>
             <a class="article-card" href="https://blickeditor.com/blog/caching-an-immediate-mode-ui">
-              <img src="assets/ui-painter-article-cover.png" width="1470" height="1936" alt="" loading="lazy">
+              <img src="assets/previews/ui-painter-cover-125.png" srcset="assets/previews/ui-painter-cover-85.png 85w, assets/previews/ui-painter-cover-125.png 125w, assets/previews/ui-painter-cover-170.png 170w, assets/previews/ui-painter-cover-250.png 250w, assets/previews/ui-painter-cover-255.png 255w, assets/previews/ui-painter-cover-375.png 375w" sizes="(max-width: 620px) 85px, 125px" width="1470" height="1936" alt="" loading="lazy">
               <div><span class="eyebrow">From the Blick blog</span><h4>Don’t throw it all away.<br>Caching an immediate-mode UI</h4><p>How the UI Painter reuses rendered pixels behind an immediate-mode UI, and what that means for power use.</p><span class="article-link">Read article</span></div>
             </a>
             <ul>
@@ -237,7 +237,7 @@
       <section class="experiments" aria-labelledby="experiments-title">
         <div class="section-heading"><h2 id="experiments-title">More projects &amp; experiments</h2></div>
         <details id="retro-racer">
-          <summary><img class="experiment-preview" src="assets/synthforce-2099.png" width="144" height="96" alt="" loading="lazy"><div class="experiment-title"><h3>SynthForce 2099</h3><p>A pseudo-3D arcade racer made by a team of four in a ten-day game jam.</p><span class="year">2023</span></div><span class="toggle" aria-hidden="true"></span></summary>
+          <summary><picture><source media="(max-width: 620px)" srcset="assets/previews/synthforce-88.jpg 1x, assets/previews/synthforce-176.jpg 2x, assets/previews/synthforce-264.jpg 3x"><img class="experiment-preview" src="assets/previews/synthforce-144.jpg" srcset="assets/previews/synthforce-288.jpg 2x, assets/previews/synthforce-432.jpg 3x" width="144" height="96" alt="" loading="lazy" decoding="async"></picture><div class="experiment-title"><h3>SynthForce 2099</h3><p>A pseudo-3D arcade racer made by a team of four in a ten-day game jam.</p><span class="year">2023</span></div><span class="toggle" aria-hidden="true"></span></summary>
           <div class="experiment-body">
             <p>We coordinated across disciplines under a tight deadline. The renderer creates an arcade-style sense of depth by scaling and moving sprites, in the spirit of games like OutRun.</p><p>For placement and tuning, I implemented a small runtime tweak system. It reads the game's source and uses a hash table and a macro to reload selected variable values while the game is running.</p>
             <figure><a href="https://deltaofpie.itch.io/synthforce-2099"><img class="media" src="assets/synthforce-2099.png" width="797" height="447" alt="SynthForce 2099 game screenshot from the team's itch.io submission." loading="lazy"></a><figcaption><span>SynthForce 2099 · game jam submission</span></figcaption></figure>
@@ -245,21 +245,21 @@
           </div>
         </details>
         <details id="ddgi">
-          <summary><img class="experiment-preview" src="assets/ddgi-poster.jpg" width="144" height="96" alt="" loading="lazy"><div class="experiment-title"><h3>Dynamic diffuse global illumination</h3><p>A D3D11 implementation guided by NVIDIA's research paper.</p><span class="year">2022–23</span></div><span class="toggle" aria-hidden="true"></span></summary>
+          <summary><picture><source media="(max-width: 620px)" srcset="assets/previews/ddgi-88.jpg 1x, assets/previews/ddgi-176.jpg 2x, assets/previews/ddgi-264.jpg 3x"><img class="experiment-preview" src="assets/previews/ddgi-144.jpg" srcset="assets/previews/ddgi-288.jpg 2x, assets/previews/ddgi-432.jpg 3x" width="144" height="96" alt="" loading="lazy" decoding="async"></picture><div class="experiment-title"><h3>Dynamic diffuse global illumination</h3><p>A D3D11 implementation guided by NVIDIA's research paper.</p><span class="year">2022–23</span></div><span class="toggle" aria-hidden="true"></span></summary>
           <div class="experiment-body">
             <p>My first substantial project with a graphics API and shaders. I implemented the technique to understand probe-based lighting and its trade-offs, including probe placement and handling dynamic objects.</p><p>The implementation works, but lacks an acceleration structure and includes naïve shaders. It was a useful starting point for the later voxel-based work.</p>
             <figure><video class="media" controls playsinline preload="none" poster="assets/ddgi-poster.jpg" width="1280" height="720" aria-label="Dynamic diffuse global illumination demo recorded February 10, 2023"><source src="assets/ddgi-demo.mp4" type="video/mp4"><a href="assets/ddgi-demo.mp4">Download the global illumination demo</a></video><figcaption><span>Development recording · 10 February 2023</span><a href="assets/ddgi-demo.mp4">Open video</a></figcaption></figure>
           </div>
         </details>
         <details id="rasterizer">
-          <summary><img class="experiment-preview" src="assets/software-rasterizer-poster.jpg" width="144" height="96" alt="" loading="lazy"><div class="experiment-title"><h3>Software rasterizer</h3><p>Working through the transformation and rasterisation pipeline on the CPU.</p><span class="year">2022</span></div><span class="toggle" aria-hidden="true"></span></summary>
+          <summary><picture><source media="(max-width: 620px)" srcset="assets/previews/rasterizer-88.jpg 1x, assets/previews/rasterizer-176.jpg 2x, assets/previews/rasterizer-264.jpg 3x"><img class="experiment-preview" src="assets/previews/rasterizer-144.jpg" srcset="assets/previews/rasterizer-288.jpg 2x, assets/previews/rasterizer-432.jpg 3x" width="144" height="96" alt="" loading="lazy" decoding="async"></picture><div class="experiment-title"><h3>Software rasterizer</h3><p>Working through the transformation and rasterisation pipeline on the CPU.</p><span class="year">2022</span></div><span class="toggle" aria-hidden="true"></span></summary>
           <div class="experiment-body">
             <p>Starting from <a href="https://github.com/ssloy/tinyrenderer">tinyrenderer</a>, I added real-time rendering, a dynamic camera, and a simple clipping method. The project helped me understand the transformation hierarchy, particularly clip space and the canonical viewing volume.</p>
             <figure class="square-demo"><video class="media" controls playsinline muted loop preload="none" poster="assets/software-rasterizer-poster.jpg" width="800" height="800" aria-label="Software rasterizer demo"><source src="assets/software-rasterizer.mp4" type="video/mp4"><a href="assets/software-rasterizer.mp4">Download the software rasterizer demo</a></video><figcaption><span>Software rasterizer · demo</span></figcaption></figure>
           </div>
         </details>
         <details id="ray-tracer">
-          <summary><img class="experiment-preview" src="assets/miniray.png" width="144" height="96" alt="" loading="lazy"><div class="experiment-title"><h3>MiniRay · CPU ray tracer</h3><p>BVH traversal, multithreading, and a faster path from model files to pixels.</p><span class="year">2022</span></div><span class="toggle" aria-hidden="true"></span></summary>
+          <summary><picture><source media="(max-width: 620px)" srcset="assets/previews/miniray-88.jpg 1x, assets/previews/miniray-176.jpg 2x, assets/previews/miniray-264.jpg 3x"><img class="experiment-preview" src="assets/previews/miniray-144.jpg" srcset="assets/previews/miniray-288.jpg 2x, assets/previews/miniray-432.jpg 3x" width="144" height="96" alt="" loading="lazy" decoding="async"></picture><div class="experiment-title"><h3>MiniRay · CPU ray tracer</h3><p>BVH traversal, multithreading, and a faster path from model files to pixels.</p><span class="year">2022</span></div><span class="toggle" aria-hidden="true"></span></summary>
           <div class="experiment-body">
             <p>I implemented a bounding volume hierarchy and a single-producer, multiple-consumer threading scheme to work towards interactive rendering.</p><p>A custom OBJ loader caches parsed models in a custom format to avoid the cost of reparsing large files. I also removed the C runtime as an exercise in understanding and reducing dependencies.</p>
             <figure><a href="assets/miniray.png" aria-label="View the full-size MiniRay render"><img class="media" src="assets/miniray.png" width="1274" height="718" alt="MiniRay render of a statue holding a sword and shield, with a reflective sphere overhead." loading="lazy"></a><figcaption><span>MiniRay · Whitted-style CPU ray tracing</span></figcaption></figure>
@@ -271,7 +271,7 @@
         <h2 id="contact-title">About &amp; contact</h2>
         <div>
           <p class="profile-copy">I develop renderers, immediate-mode UIs, and custom engines. Based in Stuttgart, Germany.</p>
-          <p class="company-affiliation"><span>Co-founder at</span> <a class="company-card" href="https://dihedron.net"><img src="assets/dihedron-logo.png" width="128" height="128" alt=""><span>Dihedron Software</span></a></p>
+          <p class="company-affiliation"><span>Co-founder at</span> <a class="company-card" href="https://dihedron.net"><img src="assets/previews/dihedron-18.png" srcset="assets/previews/dihedron-36.png 2x, assets/previews/dihedron-54.png 3x" width="18" height="18" alt=""><span>Dihedron Software</span></a></p>
           <dl class="profile-facts">
             <div><dt>Programming languages</dt><dd>C / C++ · Odin · HLSL · MSL</dd></div>
             <div><dt>Spoken languages</dt><dd>English · German · Japanese&nbsp;(basic)</dd></div>

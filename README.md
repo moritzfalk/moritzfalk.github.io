@@ -34,7 +34,7 @@ View visits, page views, and referrers in the [Cloudflare dashboard](https://das
 
 English is the default at `index.html`. Complete German and Japanese versions live at `de.html` and `ja.html`, with a language selector on every page. Each page has inline styles and shares the same assets; keep layout and content changes consistent across all three pages. The Japanese about and contact section states that Japanese proficiency is approximately JLPT N4 (self-assessed) and English is preferred for technical discussions. The downloadable CV remains in English. Language selection is explicit, with no automatic redirect. Alternate-language metadata is included for search engines. Each project has a stable anchor: `blick`, `arc`, `custom-engine`, `retro-racer`, `ddgi`, `rasterizer`, and `ray-tracer`.
 
-The supplied portrait is stored at `assets/moritz-falk.jpg` and displayed with a square CSS crop in the header. Replace that file to update the photo on all three pages; the original photo is unchanged.
+The supplied portrait is stored at `assets/moritz-falk.jpg`. The header uses square, prefiltered copies from `assets/previews/`, preserving the previous centre crop. When replacing the portrait, regenerate its preview sizes as well; the original photo is unchanged.
 
 Project media and links:
 
@@ -53,3 +53,5 @@ The downloadable CV is an unchanged copy of the supplied PDF, including its post
 Project dates and technical descriptions follow the supplied CV. No project URLs, screenshots, testimonials, performance figures, or qualifications have been invented. The Blick project links to the published UI Painter article.
 
 The about and contact section includes a compact co-founder affiliation with a linked Dihedron Software logo in all three languages. Programming and spoken languages use inline labels on two rows. Its official small-format logo comes from https://dihedron.net/static/dihedron/favicon.png, stored locally as `assets/dihedron-logo.png`; the card links to https://dihedron.net.
+
+Small raster images have prefiltered variants in `assets/previews/`, generated with Lanczos3 reduction and JPEG shrink-on-load disabled. Project thumbnails have separate 88×66 mobile and 144×96 desktop versions at 1×, 2×, and 3× density, including the existing dark letterboxing. The portrait uses 72/144/216-pixel square versions; the Dihedron icon uses 18/36/54-pixel versions for its 18-pixel content box. The article cover uses 85/125/170/250/255/375-pixel widths with `srcset` and `sizes`. JPEG previews use quality 90 and 4:4:4 chroma sampling; the cover and logo remain PNGs. All versions derive from the original local assets, which remain available for expanded views. Regenerate affected previews when replacing an image. This requires no runtime image service or extra JavaScript.

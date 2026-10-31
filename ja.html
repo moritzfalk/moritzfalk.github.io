@@ -89,7 +89,7 @@
     .experiments .section-heading { border-top: 0; padding-top: 0; margin-bottom: 12px; }
     details { border-bottom: 1px solid var(--line); }
     summary { list-style: none; display: grid; grid-template-columns: 144px minmax(0, 1fr) 24px; gap: 24px; align-items: center; padding: 22px 0; cursor: pointer; }
-    .experiment-preview { width: 144px; height: 96px; object-fit: contain; background: #151a17; }
+    .experiment-preview { display: block; width: 144px; height: 96px; object-fit: contain; background: #151a17; }
     summary::-webkit-details-marker { display: none; }
     summary .year { display: block; color: var(--muted); font-size: 13px; margin-top: 5px; }
     summary h3 { font-size: 19px; font-weight: 550; line-height: 1.4; letter-spacing: -.4px; margin: 0 0 4px; }
@@ -153,7 +153,7 @@
   <div class="wrap">
     <header class="site-header">
       <div class="identity">
-        <img class="portrait" src="assets/moritz-falk.jpg" width="1024" height="576" alt="Moritz Falk" decoding="async">
+        <img class="portrait" src="assets/previews/moritz-falk-72.jpg" srcset="assets/previews/moritz-falk-144.jpg 2x, assets/previews/moritz-falk-216.jpg 3x" width="72" height="72" alt="Moritz Falk" decoding="async">
         <div><h1><a class="wordmark" href="#" aria-label="Moritz Falk、ページの先頭へ">Moritz Falk</a></h1><p class="role">グラフィックス・システムプログラマー</p></div>
       </div>
       <nav aria-label="メインナビゲーション">
@@ -177,7 +177,7 @@
           <div class="project-body">
             <p class="lead">イミディエイトモードUIを採用したクロスプラットフォームの動画編集ソフトです。</p>
             <a class="article-card" href="https://blickeditor.com/blog/caching-an-immediate-mode-ui">
-              <img src="assets/ui-painter-article-cover.png" width="1470" height="1936" alt="" loading="lazy">
+              <img src="assets/previews/ui-painter-cover-125.png" srcset="assets/previews/ui-painter-cover-85.png 85w, assets/previews/ui-painter-cover-125.png 125w, assets/previews/ui-painter-cover-170.png 170w, assets/previews/ui-painter-cover-250.png 250w, assets/previews/ui-painter-cover-255.png 255w, assets/previews/ui-painter-cover-375.png 375w" sizes="(max-width: 620px) 85px, 125px" width="1470" height="1936" alt="" loading="lazy">
               <div><span class="eyebrow">Blickブログより · 英語</span><h4>Don’t throw it all away.<br>Caching an immediate-mode UI</h4><p>イミディエイトモードUIで描画済みのピクセルを再利用する仕組みと、消費電力への効果について。</p><span class="article-link">記事を読む</span></div>
             </a>
             <ul>
@@ -237,7 +237,7 @@
       <section class="experiments" aria-labelledby="experiments-title">
         <div class="section-heading"><h2 id="experiments-title">その他のプロジェクト・実験</h2></div>
         <details id="retro-racer">
-          <summary><img class="experiment-preview" src="assets/synthforce-2099.png" width="144" height="96" alt="" loading="lazy"><div class="experiment-title"><h3>SynthForce 2099</h3><p>10日間のゲームジャムで、4人で制作した疑似3Dのアーケードレースゲームです。</p><span class="year">2023</span></div><span class="toggle" aria-hidden="true"></span></summary>
+          <summary><picture><source media="(max-width: 620px)" srcset="assets/previews/synthforce-88.jpg 1x, assets/previews/synthforce-176.jpg 2x, assets/previews/synthforce-264.jpg 3x"><img class="experiment-preview" src="assets/previews/synthforce-144.jpg" srcset="assets/previews/synthforce-288.jpg 2x, assets/previews/synthforce-432.jpg 3x" width="144" height="96" alt="" loading="lazy" decoding="async"></picture><div class="experiment-title"><h3>SynthForce 2099</h3><p>10日間のゲームジャムで、4人で制作した疑似3Dのアーケードレースゲームです。</p><span class="year">2023</span></div><span class="toggle" aria-hidden="true"></span></summary>
           <div class="experiment-body">
             <p>短い制作期間の中で、担当分野の異なるメンバーと協力しました。スプライトを拡大・縮小したり動かしたりすることで、OutRunのような奥行きを表現しています。</p><p>配置やパラメーターを調整しやすいよう、ゲームを動かしたまま値を変更できる仕組みも作りました。ソースコードを読み取り、ハッシュテーブルとマクロを使って、指定した変数の値を再読み込みします。</p>
             <figure><a href="https://deltaofpie.itch.io/synthforce-2099"><img class="media" src="assets/synthforce-2099.png" width="797" height="447" alt="チームがitch.ioに公開したSynthForce 2099のゲーム画面。" loading="lazy"></a><figcaption><span>SynthForce 2099 · ゲームジャム作品</span></figcaption></figure>
@@ -245,21 +245,21 @@
           </div>
         </details>
         <details id="ddgi">
-          <summary><img class="experiment-preview" src="assets/ddgi-poster.jpg" width="144" height="96" alt="" loading="lazy"><div class="experiment-title"><h3>Dynamic Diffuse Global Illumination（DDGI）</h3><p>NVIDIAの論文を参考にしたD3D11実装です。</p><span class="year">2022–23</span></div><span class="toggle" aria-hidden="true"></span></summary>
+          <summary><picture><source media="(max-width: 620px)" srcset="assets/previews/ddgi-88.jpg 1x, assets/previews/ddgi-176.jpg 2x, assets/previews/ddgi-264.jpg 3x"><img class="experiment-preview" src="assets/previews/ddgi-144.jpg" srcset="assets/previews/ddgi-288.jpg 2x, assets/previews/ddgi-432.jpg 3x" width="144" height="96" alt="" loading="lazy" decoding="async"></picture><div class="experiment-title"><h3>Dynamic Diffuse Global Illumination（DDGI）</h3><p>NVIDIAの論文を参考にしたD3D11実装です。</p><span class="year">2022–23</span></div><span class="toggle" aria-hidden="true"></span></summary>
           <div class="experiment-body">
             <p>グラフィックスAPIとシェーダーを使った最初の本格的なプロジェクトです。プローブを使ったライティングの仕組みを学ぶために実装しました。プローブの配置や動くオブジェクトへの対応など、それぞれのトレードオフを検討しました。</p><p>動作はしますが、高速化構造（acceleration structure）はなく、シェーダーもまだ最適化していません。この経験が、その後のボクセルベースの開発につながりました。</p>
             <figure><video class="media" controls playsinline preload="none" poster="assets/ddgi-poster.jpg" width="1280" height="720" aria-label="Dynamic Diffuse Global Illumination（DDGI）のデモ、2023年2月10日録画"><source src="assets/ddgi-demo.mp4" type="video/mp4"><a href="assets/ddgi-demo.mp4">グローバルイルミネーションのデモをダウンロード</a></video><figcaption><span>開発中のデモ · 2023年2月10日</span><a href="assets/ddgi-demo.mp4">動画を開く</a></figcaption></figure>
           </div>
         </details>
         <details id="rasterizer">
-          <summary><img class="experiment-preview" src="assets/software-rasterizer-poster.jpg" width="144" height="96" alt="" loading="lazy"><div class="experiment-title"><h3>ソフトウェアラスタライザー</h3><p>座標変換とラスタライズの仕組みを、CPU上で実装しながら学びました。</p><span class="year">2022</span></div><span class="toggle" aria-hidden="true"></span></summary>
+          <summary><picture><source media="(max-width: 620px)" srcset="assets/previews/rasterizer-88.jpg 1x, assets/previews/rasterizer-176.jpg 2x, assets/previews/rasterizer-264.jpg 3x"><img class="experiment-preview" src="assets/previews/rasterizer-144.jpg" srcset="assets/previews/rasterizer-288.jpg 2x, assets/previews/rasterizer-432.jpg 3x" width="144" height="96" alt="" loading="lazy" decoding="async"></picture><div class="experiment-title"><h3>ソフトウェアラスタライザー</h3><p>座標変換とラスタライズの仕組みを、CPU上で実装しながら学びました。</p><span class="year">2022</span></div><span class="toggle" aria-hidden="true"></span></summary>
           <div class="experiment-body">
             <p><a href="https://github.com/ssloy/tinyrenderer">tinyrenderer</a>をベースに、リアルタイム描画、カメラ操作、簡単なクリッピングを追加しました。座標変換の流れ、特にクリップ空間と正規化された視体積への理解が深まりました。</p>
             <figure class="square-demo"><video class="media" controls playsinline muted loop preload="none" poster="assets/software-rasterizer-poster.jpg" width="800" height="800" aria-label="ソフトウェアラスタライザーのデモ"><source src="assets/software-rasterizer.mp4" type="video/mp4"><a href="assets/software-rasterizer.mp4">ソフトウェアラスタライザーのデモをダウンロード</a></video><figcaption><span>ソフトウェアラスタライザー · デモ</span></figcaption></figure>
           </div>
         </details>
         <details id="ray-tracer">
-          <summary><img class="experiment-preview" src="assets/miniray.png" width="144" height="96" alt="" loading="lazy"><div class="experiment-title"><h3>MiniRay · CPUレイトレーサー</h3><p>BVHの走査、マルチスレッド処理、モデルの読み込みから描画までの高速化に取り組みました。</p><span class="year">2022</span></div><span class="toggle" aria-hidden="true"></span></summary>
+          <summary><picture><source media="(max-width: 620px)" srcset="assets/previews/miniray-88.jpg 1x, assets/previews/miniray-176.jpg 2x, assets/previews/miniray-264.jpg 3x"><img class="experiment-preview" src="assets/previews/miniray-144.jpg" srcset="assets/previews/miniray-288.jpg 2x, assets/previews/miniray-432.jpg 3x" width="144" height="96" alt="" loading="lazy" decoding="async"></picture><div class="experiment-title"><h3>MiniRay · CPUレイトレーサー</h3><p>BVHの走査、マルチスレッド処理、モデルの読み込みから描画までの高速化に取り組みました。</p><span class="year">2022</span></div><span class="toggle" aria-hidden="true"></span></summary>
           <div class="experiment-body">
             <p>インタラクティブな描画を目指し、BVH（Bounding Volume Hierarchy）とマルチスレッド処理を実装しました。スレッド間の処理には、単一プロデューサー・複数コンシューマー方式を使っています。</p><p>自作のOBJローダーでは、読み込んだモデルを独自形式でキャッシュしています。大きなファイルを毎回パースし直す必要がなくなります。また、依存関係を理解して減らすために、Cランタイムへの依存も取り除きました。</p>
             <figure><a href="assets/miniray.png" aria-label="MiniRayの描画結果を元のサイズで表示"><img class="media" src="assets/miniray.png" width="1274" height="718" alt="剣と盾を持つ像と、その上に浮かぶ反射する球体を描画したMiniRayの画像。" loading="lazy"></a><figcaption><span>MiniRay · Whitted型CPUレイトレーシング</span></figcaption></figure>
@@ -271,7 +271,7 @@
         <h2 id="contact-title">自己紹介・お問い合わせ</h2>
         <div>
           <p class="profile-copy">ドイツのシュトゥットガルトで、レンダラー、イミディエイトモードUI、自作エンジンを開発しています。</p>
-          <p class="company-affiliation"><a class="company-card" href="https://dihedron.net"><img src="assets/dihedron-logo.png" width="128" height="128" alt=""><span>Dihedron Software</span></a> <span>共同創業者</span></p>
+          <p class="company-affiliation"><a class="company-card" href="https://dihedron.net"><img src="assets/previews/dihedron-18.png" srcset="assets/previews/dihedron-36.png 2x, assets/previews/dihedron-54.png 3x" width="18" height="18" alt=""><span>Dihedron Software</span></a> <span>共同創業者</span></p>
           <dl class="profile-facts">
             <div><dt>プログラミング言語</dt><dd>C / C++ · Odin · HLSL · MSL</dd></div>
             <div><dt>話せる言語</dt><dd>英語・ドイツ語・日本語（初級）</dd></div>

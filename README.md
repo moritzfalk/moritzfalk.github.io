@@ -1,6 +1,8 @@
 # Moritz Falk — CV website
 
-A static, responsive portfolio built from CV_English.pdf. The page uses plain HTML and inline CSS, system fonts, and native expandable project sections. No build step, external fonts, or dependencies are required. YouTube videos use linked preview images that open in a new tab. No JavaScript is needed.
+A static, responsive portfolio built from CV_English.pdf. The page uses plain HTML and inline CSS, system fonts, and native expandable project sections. No build step or external fonts are required. YouTube videos use linked preview images that open in a new tab. Each main project follows the same order: a short project description, an article or demo link, then technical bullet points. Employment roles and responsibilities are listed alongside each project. Content and navigation work without JavaScript; Cloudflare Web Analytics uses a small external script.
+
+A compact header keeps the portrait, name, role, contact link, and language selector visible before the projects. The fuller introduction, company affiliation, programming and spoken languages, and contact/CV links follow the projects in the about and contact section. Project roles and technical descriptions remain explicit. Smaller projects show thumbnail previews even when their details are collapsed.
 
 ## Preview
 
@@ -22,11 +24,17 @@ git push origin main:main main:gh-pages
 
 If either remote branch has changed, fetch and reconcile those changes before publishing. Do not force-push. All asset links are relative. See [GitHub's publishing instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
+## Traffic analytics
+
+Cloudflare Web Analytics is configured for `moritzfalk.com` using manual JavaScript snippet installation. Each language page loads the same Cloudflare-provided module before its closing body tag. The site token in the HTML is a public analytics identifier, not an account credential. Hosting and DNS remain unchanged.
+
+View visits, page views, and referrers in the [Cloudflare dashboard](https://dash.cloudflare.com/9d0bff38ab38f698c0966b81b81c9998/web-analytics/overview/visits?siteTag~in=6a34d9fbe1c941e980039478adab12a6&excludeBots=Yes). Collection begins after deployment; statistics may take a few minutes to appear.
+
 ## Content and media
 
-English is the default at `index.html`. Complete German and Japanese versions live at `de.html` and `ja.html`, with a language selector on every page. Each page has inline styles and shares the same assets; keep layout and content changes consistent across all three pages. The Japanese introduction states that Japanese proficiency is approximately JLPT N4 (self-assessed) and English is preferred for technical discussions. The downloadable CV remains in English. Language selection is explicit, with no automatic redirect. Alternate-language metadata is included for search engines. Each project has a stable anchor: `blick`, `arc`, `custom-engine`, `retro-racer`, `ddgi`, `rasterizer`, and `ray-tracer`.
+English is the default at `index.html`. Complete German and Japanese versions live at `de.html` and `ja.html`, with a language selector on every page. Each page has inline styles and shares the same assets; keep layout and content changes consistent across all three pages. The Japanese about and contact section states that Japanese proficiency is approximately JLPT N4 (self-assessed) and English is preferred for technical discussions. The downloadable CV remains in English. Language selection is explicit, with no automatic redirect. Alternate-language metadata is included for search engines. Each project has a stable anchor: `blick`, `arc`, `custom-engine`, `retro-racer`, `ddgi`, `rasterizer`, and `ray-tracer`.
 
-The supplied portrait is stored at `assets/moritz-falk.jpg` and displayed with a square CSS crop in the introduction. Replace that file to update the photo on all three pages; the original photo is unchanged.
+The supplied portrait is stored at `assets/moritz-falk.jpg` and displayed with a square CSS crop in the header. Replace that file to update the photo on all three pages; the original photo is unchanged.
 
 Project media and links:
 
@@ -38,10 +46,10 @@ Project media and links:
 - The software rasterizer uses an H.264 copy of the supplied GIF, with controls and no autoplay. Its reference is https://github.com/ssloy/tinyrenderer.
 - DDGI uses the supplied February 10, 2023 recording, remuxed for progressive playback without re-encoding. Original audio is preserved.
 
-The original local media files are unchanged. Videos use `preload="none"`; YouTube thumbnails are stored locally and link directly to YouTube, avoiding embedded players that can require visitors to sign in before playback. The ARC preview uses a 1440p source frame at 10:30, framed with CSS to exclude the presenter inset. New preview filenames avoid stale cached thumbnails. Both the rasterizer and DDGI descriptions mention the author's sharing on Handmade Network's #showcase-projects Discord channel; no specific Discord message links were supplied.
+The original local media files are unchanged. Videos use `preload="none"`; YouTube thumbnails are stored locally and link directly to YouTube, avoiding embedded players that can require visitors to sign in before playback. The ARC preview uses a 1440p source frame at 10:30, framed with CSS to exclude the presenter inset. New preview filenames avoid stale cached thumbnails.
 
-The downloadable CV is an unchanged copy of the supplied PDF, including its postal address. The webpages list Stuttgart, the supplied email address, and the supplied X profile at https://x.com/falk_moritz. Email and X contact links appear in both the introduction and contact section on all three language versions. Replace `assets/moritz-falk-cv.pdf` if a different public CV is preferred.
+The downloadable CV is an unchanged copy of the supplied PDF, including its postal address. The webpages list Stuttgart, the supplied email address, and the supplied X profile at https://x.com/falk_moritz. Email, X, and CV links appear in the about and contact section on all three language versions, with a contact shortcut in the header. Replace `assets/moritz-falk-cv.pdf` if a different public CV is preferred.
 
 Project dates and technical descriptions follow the supplied CV. No project URLs, screenshots, testimonials, performance figures, or qualifications have been invented. The Blick project links to the published UI Painter article.
 
-The Currently section includes a linked Dihedron Software card in all three languages. Its official small-format logo comes from https://dihedron.net/static/dihedron/favicon.png, stored locally as `assets/dihedron-logo.png`; the card links to https://dihedron.net.
+The about and contact section includes a compact co-founder affiliation with a linked Dihedron Software logo in all three languages. Programming and spoken languages use inline labels on two rows. Its official small-format logo comes from https://dihedron.net/static/dihedron/favicon.png, stored locally as `assets/dihedron-logo.png`; the card links to https://dihedron.net.
